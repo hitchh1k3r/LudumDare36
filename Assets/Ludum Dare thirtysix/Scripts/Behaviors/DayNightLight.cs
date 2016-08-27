@@ -46,7 +46,7 @@ public class DayNightLight : MonoBehaviour
       float x = Ease.QuadInOut(eulers.x, targetX, timer / transformTime);
       if (x > 160 && x < 200)
       {
-        light.shadowStrength = ((190 - x) * 0.025f);
+        light.shadowStrength = ((200 - x) * 0.025f);
       }
       else if (x > 340)
       {
@@ -55,6 +55,14 @@ public class DayNightLight : MonoBehaviour
       else if (x < 20)
       {
         light.shadowStrength = 0.5f + ((x) * 0.025f);
+      }
+      else if (x > 0 && x < 180)
+      {
+        light.shadowStrength = 1;
+      }
+      else
+      {
+        light.shadowStrength = 0;
       }
       transform.rotation = Quaternion.Euler(x, eulers.y, eulers.z);
       float mix = Ease.QuadInOut(0, 1, timer / transformTime);
