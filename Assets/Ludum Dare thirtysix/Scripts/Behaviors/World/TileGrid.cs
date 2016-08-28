@@ -5,57 +5,73 @@ using UnityEngine.UI;
 
 public class TileGrid : MonoBehaviour
 {
+
   // W = Water
   // D = Dirt
   // G = Ground/Grass
-  [TextArea]
+  [TextArea(10, 10)]
   public string tileString;
-  public GameObject water;
-  public GameObject dirt;
-  public GameObject ground;
+  public float tileSpacing = 1.0f;
+
+  public TileMapEntry[] tileMap;
+
   // TODO: change dictionary into a struct
-  private Dictionary<char, GameObject> tileLookup;
-  private GameObject[] worldGrid;
-  public float tileSpacing = 1.1f;
+  private Dictionary<char, GameObject[]> tileLookup = new Dictionary<char, GameObject[]>();
+  private GameObject[] terrain;
+  private GameObject[] tiles;
+  private int width;
+
   void Start()
   {
-    int r = 0;
-    int c = 0;
-    initWorldDictionary();
-    string[] strings = tileString.Split('\n');
-    int totalRows = strings.Length;
-    int totalColumns = strings[0].Length;
-    worldGrid = new GameObject[totalRows * totalColumns];
-    for (r = 0; r < strings.Length; r++)
+    int r, c;
+    string[] lines = tileString.Split('\n');
+    int totalRows = lines.Length;
+    width = lines[0].Length;
+
+    InitWorldDictionary();
+
+    terrain = new GameObject[totalRows * width];
+    tiles = new GameObject[totalRows * width];
+    for (r = 0; r < lines.Length; r++)
     {
-      if (strings[r].Length != totalColumns)
+      if (lines[r].Length != width)
       {
-        Debug.LogError("World grid is not of even length on line r: " + r + "\nstring: " + strings[r]);
+        Debug.LogError("World grid is not of even length on line r: " + r + "\nstring: " + lines[r]);
       }
       else
       {
-        for (c = 0; c < strings[r].Length; c++)
+        for (c = 0; c < lines[r].Length; c++)
         {
-          GameObject ngo = Instantiate(tileLookup[strings[r][c]]);
+          GameObject ngo = Instantiate(tileLookup[lines[r][c]][Random.Range(0, tileLookup[lines[r][c]].Length)]);
           ngo.transform.parent = transform;
           ngo.transform.localPosition = Vector3.right * c * tileSpacing + Vector3.back * r * tileSpacing + (Random.value * 0.1f) * Vector3.up;
           ngo.transform.localRotation = Quaternion.identity;
           ngo.layer = gameObject.layer;
-          worldGrid[worldGridIndex(r, c)] = ngo;
+          terrain[WorldGridIndex(c, r)] = ngo;
         }
       }
     }
   }
-  public int worldGridIndex(int row, int column)
+
+  public int WorldGridIndex(int column, int row)
   {
-    int index = row * column + column;
+    int index = column + (row * width);
     return index;
   }
-  void initWorldDictionary()
+
+  private void InitWorldDictionary()
   {
-    tileLookup = new Dictionary<char, GameObject>();
-    tileLookup.Add('W', water);
-    tileLookup.Add('D', dirt);
-    tileLookup.Add('G', ground);
+    foreach (TileMapEntry tile in tileMap)
+    {
+      tileLookup.Add(tile.code, tile.prefab);
+    }
   }
+
+  [System.Serializable]
+  public struct TileMapEntry
+  {
+    public char code;
+    public GameObject[] prefab;
+  }
+
 }
