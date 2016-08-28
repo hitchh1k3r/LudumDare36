@@ -9,7 +9,7 @@ public class DayNightLight : MonoBehaviour
   public int phaseIndex;
   public Color[] phaseColors = { new Color(1, 0, 0) };
 
-  private Light light;
+  private new Light light;
   private float timer;
   private bool running;
   private Vector3 eulers;
