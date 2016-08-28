@@ -4,6 +4,7 @@ using System.Collections;
 public class CameraMover : MonoBehaviour
 {
 
+  public TileGrid tiles;
   public Transform camera;
   public float spinTime = 0.5f;
   public float moveSpeed = 10;
@@ -23,6 +24,22 @@ public class CameraMover : MonoBehaviour
       {
         spin = StartCoroutine(SpinTo(transform.eulerAngles.y - 90));
       }
+    }
+    if (transform.position.x < tiles.transform.position.x)
+    {
+      transform.position = new Vector3(tiles.transform.position.x, transform.position.y, transform.position.z);
+    }
+    if (transform.position.x > tiles.transform.position.x + tiles.width - 1)
+    {
+      transform.position = new Vector3(tiles.transform.position.x + tiles.width - 1, transform.position.y, transform.position.z);
+    }
+    if (transform.position.z < tiles.transform.position.z - tiles.height + 1)
+    {
+      transform.position = new Vector3(transform.position.x, transform.position.y, tiles.transform.position.z - tiles.height + 1);
+    }
+    if (transform.position.z > tiles.transform.position.z)
+    {
+      transform.position = new Vector3(transform.position.x, transform.position.y, tiles.transform.position.z);
     }
     if (Input.GetAxis("Horizontal") > -0.1f && Input.GetAxis("Horizontal") < 0.1f &&
         Input.GetAxis("Vertical") > -0.1f && Input.GetAxis("Vertical") < 0.1f)

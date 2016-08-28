@@ -42,18 +42,22 @@ public class HighlightEffect : MonoBehaviour
               MeshFilter filter = renderer.GetComponent<MeshFilter>();
               if (filter != null)
               {
-                MeshRenderer nr = new GameObject().AddComponent<MeshRenderer>();
-                nr.transform.SetParent(renderer.transform);
-                nr.transform.localPosition = Vector3.zero;
-                nr.transform.localScale = Vector3.one;
-                nr.receiveShadows = false;
-                nr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-                nr.transform.localRotation = Quaternion.identity;
-                nr.name = renderer.name + " (Aura)";
-                nr.sharedMaterial = mat;
-                nr.gameObject.layer = highlightLayer;
-                MeshFilter f = nr.gameObject.AddComponent<MeshFilter>();
-                f.sharedMesh = renderer.GetComponent<MeshFilter>().sharedMesh;
+                SpecialStates state = renderer.GetComponent<SpecialStates>();
+                if (state == null || !state.hideFromHighlighter)
+                {
+                  MeshRenderer nr = new GameObject().AddComponent<MeshRenderer>();
+                  nr.transform.SetParent(renderer.transform);
+                  nr.transform.localPosition = Vector3.zero;
+                  nr.transform.localScale = Vector3.one;
+                  nr.receiveShadows = false;
+                  nr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+                  nr.transform.localRotation = Quaternion.identity;
+                  nr.name = renderer.name + " (Aura)";
+                  nr.sharedMaterial = mat;
+                  nr.gameObject.layer = highlightLayer;
+                  MeshFilter f = nr.gameObject.AddComponent<MeshFilter>();
+                  f.sharedMesh = renderer.GetComponent<MeshFilter>().sharedMesh;
+                }
               }
             }
           }

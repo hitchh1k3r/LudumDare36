@@ -6,48 +6,41 @@ using UnityEngine.UI;
 public class TileGrid : MonoBehaviour
 {
 
-  // W = Water
-  // D = Dirt
-  // G = Ground/Grass
-  [TextArea(10, 10)]
+  [TextArea(5, 20)]
   public string tileString;
   public float tileSpacing = 1.0f;
 
   public TileMapEntry[] tileMap;
 
-  // TODO: change dictionary into a struct
+  [System.NonSerialized]
+  public int width, height;
+
   private Dictionary<char, GameObject[]> tileLookup = new Dictionary<char, GameObject[]>();
   private GameObject[] terrain;
   private GameObject[] tiles;
-  private int width;
 
   void Start()
   {
     int r, c;
     string[] lines = tileString.Split('\n');
-    int totalRows = lines.Length;
+    height = lines.Length;
     width = lines[0].Length;
 
     InitWorldDictionary();
 
-    terrain = new GameObject[totalRows * width];
-    tiles = new GameObject[totalRows * width];
-    for (r = 0; r < lines.Length; r++)
+    terrain = new GameObject[height * width];
+    tiles = new GameObject[height * width];
+    for (r = 0; r < lines.Length; ++r)
     {
       if (lines[r].Length != width)
       {
-        Debug.LogError("World grid is not of even length on line r: " + r + "\nstring: " + lines[r]);
+        Debug.LogError("World grid is not of even length on line " + r + "\nText: " + lines[r] + "\nGot: " + lines[r].Length + " Expected: " + width);
       }
       else
       {
-        for (c = 0; c < lines[r].Length; c++)
+        for (c = 0; c < lines[r].Length; ++c)
         {
-          GameObject ngo = Instantiate(tileLookup[lines[r][c]][Random.Range(0, tileLookup[lines[r][c]].Length)]);
-          ngo.transform.parent = transform;
-          ngo.transform.localPosition = Vector3.right * c * tileSpacing + Vector3.back * r * tileSpacing + (Random.value * 0.1f) * Vector3.up;
-          ngo.transform.localRotation = Quaternion.identity;
-          ngo.layer = gameObject.layer;
-          terrain[WorldGridIndex(c, r)] = ngo;
+          SetTerrain(c, r, lines[r][c]);
         }
       }
     }
@@ -67,11 +60,92 @@ public class TileGrid : MonoBehaviour
     }
   }
 
+  public Point GetTerrainPos(GameObject block)
+  {
+    Point point = null;
+    for (int i = 0; i < terrain.Length; ++i)
+    {
+      if (block == terrain[i])
+      {
+        int y = i % width;
+        int x = i - (y * width);
+        return new Point(x, y);
+      }
+    }
+    return point;
+  }
+
+  public float HeightOffset(int x, int y)
+  {
+    Random.seed = (x * 179424691 + (y * 314606869));
+    return Random.Range(0, 0.1f);
+  }
+
+  public void SetTerrain(int x, int y, char type)
+  {
+    SetTerrain(x, y, tileLookup[type][Random.Range(0, tileLookup[type].Length)]);
+  }
+
+  public void SetTerrain(int x, int y, GameObject prefab)
+  {
+    int i = WorldGridIndex(x, y);
+    if (terrain[i] != null)
+    {
+      Destroy(terrain[i]);
+    }
+
+    GameObject ngo = Instantiate(prefab);
+    ngo.transform.parent = transform;
+    ngo.transform.localPosition = Vector3.right * x * tileSpacing + Vector3.back * y * tileSpacing + HeightOffset(x, y) * Vector3.up;
+    ngo.transform.localRotation = Quaternion.identity;
+    ngo.layer = gameObject.layer;
+    terrain[i] = ngo;
+  }
+
+  /*
+    public GameTile GetTile(int x, int y)
+    {
+      // DO ADDING
+      return null;
+    }
+  */
+
+  public void SetTile(int x, int y, GameObject prefab)
+  {
+    int i = WorldGridIndex(x, y);
+    if (tiles[i] != null)
+    {
+      Destroy(tiles[i]);
+    }
+
+    if (prefab != null)
+    {
+      GameObject ngo = Instantiate(prefab);
+      ngo.transform.parent = transform;
+      ngo.transform.localPosition = Vector3.right * x * tileSpacing + Vector3.back * y * tileSpacing + (HeightOffset(x, y) + 1) * Vector3.up;
+      ngo.transform.localRotation = Quaternion.identity;
+      tiles[i] = ngo;
+    }
+  }
+
   [System.Serializable]
   public struct TileMapEntry
   {
     public char code;
     public GameObject[] prefab;
+  }
+
+  public class Point
+  {
+
+    public int x, y;
+
+    public Point(int x, int y)
+    {
+      this.x = x;
+      this.y = y;
+    }
+
   }
 
 }

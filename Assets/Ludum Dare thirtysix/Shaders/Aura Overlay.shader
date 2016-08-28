@@ -81,8 +81,8 @@
 		}
 
 		Pass {
-      Blend OneMinusDstColor One
-      // Blend One One
+      // Blend OneMinusDstColor One
+      Blend One One
 
 			CGPROGRAM
 				#pragma vertex vert

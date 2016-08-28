@@ -11,9 +11,14 @@ public class BuildingPrice : MonoBehaviour
 
   public static GameObject selected;
 
+  void Update()
+  {
+    // STUB SO UNITY CAN DISABLE THIS SCRIPT
+  }
+
   void OnMouseUpAsButton()
   {
-    if (researched && !ScoreTracker.instance.isSummaryShowing)
+    if (enabled && researched && !ScoreTracker.instance.isSummaryShowing)
     {
       if (selected == null)
       {
