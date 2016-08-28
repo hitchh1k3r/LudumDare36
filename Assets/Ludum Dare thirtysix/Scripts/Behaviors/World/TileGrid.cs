@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+
 public class TileGrid : MonoBehaviour
 {
   // W = Water
@@ -25,29 +26,29 @@ public class TileGrid : MonoBehaviour
     int totalRows = strings.Length;
     int totalColumns = strings[0].Length;
     worldGrid = new GameObject[totalRows * totalColumns];
-    for(r = 0; r < strings.Length; r++)
+    for (r = 0; r < strings.Length; r++)
     {
-      if(strings[r].Length != totalColumns)
+      if (strings[r].Length != totalColumns)
       {
         Debug.LogError("World grid is not of even length on line r: " + r + "\nstring: " + strings[r]);
       }
       else
       {
-        for(c = 0; c < strings[r].Length; c++)
-         {
-           GameObject ngo = Instantiate(tileLookup[strings[r][c]]);
-           ngo.transform.parent = transform;
-           ngo.transform.localPosition = Vector3.left * r * tileSpacing + Vector3.forward * c * tileSpacing;
-           ngo.transform.localRotation = Quaternion.identity;
-           ngo.layer = gameObject.layer;
-           worldGrid[worldGridIndex(r,c)] = ngo;
+        for (c = 0; c < strings[r].Length; c++)
+        {
+          GameObject ngo = Instantiate(tileLookup[strings[r][c]]);
+          ngo.transform.parent = transform;
+          ngo.transform.localPosition = Vector3.right * c * tileSpacing + Vector3.back * r * tileSpacing + (Random.value * 0.1f) * Vector3.up;
+          ngo.transform.localRotation = Quaternion.identity;
+          ngo.layer = gameObject.layer;
+          worldGrid[worldGridIndex(r, c)] = ngo;
         }
       }
     }
   }
   public int worldGridIndex(int row, int column)
   {
-    int index = row*column + column;
+    int index = row * column + column;
     return index;
   }
   void initWorldDictionary()

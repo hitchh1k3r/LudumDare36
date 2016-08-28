@@ -67,6 +67,34 @@ public class Resources : MonoBehaviour
     return null;
   }
 
+  public static string GetName(Type type)
+  {
+    switch (type)
+    {
+      case Type.TIME:
+        {
+          return "Turns";
+        }
+      case Type.VILLAGER:
+        {
+          return "Villagers";
+        }
+      case Type.LUMBER:
+        {
+          return "Timber";
+        }
+      case Type.CROP:
+        {
+          return "Crops";
+        }
+      case Type.MEAT:
+        {
+          return "Meat";
+        }
+    }
+    return null;
+  }
+
   public enum Type
   {
     TIME,
