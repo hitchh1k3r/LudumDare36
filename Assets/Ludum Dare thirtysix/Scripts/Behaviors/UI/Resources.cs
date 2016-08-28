@@ -8,10 +8,12 @@ public class Resources : MonoBehaviour
   public Sprite villagerIcon;
   public Sprite lumberIcon;
   public Sprite cropsIcon;
+  public Sprite meatIcon;
 
   public int villagers = 5;
-  public int lumber = 0;
-  public int crops = 20;
+  public int lumber = 5;
+  public int crops = 5;
+  public int meat = 5;
 
   public int GetValue(Type type)
   {
@@ -28,6 +30,10 @@ public class Resources : MonoBehaviour
       case Type.CROP:
         {
           return crops;
+        }
+      case Type.MEAT:
+        {
+          return meat;
         }
     }
     return 0;
@@ -53,16 +59,21 @@ public class Resources : MonoBehaviour
         {
           return cropsIcon;
         }
+      case Type.MEAT:
+        {
+          return meatIcon;
+        }
     }
     return null;
   }
 
   public enum Type
   {
+    TIME,
     VILLAGER,
     LUMBER,
     CROP,
-    TIME
+    MEAT
   }
 
 }

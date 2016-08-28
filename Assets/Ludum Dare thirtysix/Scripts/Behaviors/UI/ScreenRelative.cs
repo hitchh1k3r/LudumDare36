@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class ScreenRelative : MonoBehaviour
 {
@@ -9,34 +8,49 @@ public class ScreenRelative : MonoBehaviour
 
   void Update()
   {
-    Vector3 viewportPoint = new Vector3(0, 0, 10);
-    if (attachCorner == Corner.TOP_LEFT)
+    Vector3 viewportPoint = Vector3.zero;
+    switch (attachCorner)
     {
-      viewportPoint = new Vector3(0, 1, 10);
-    }
-    else if (attachCorner == Corner.TOP_RIGHT)
-    {
-      viewportPoint = new Vector3(1, 1, 10);
-    }
-    else if (attachCorner == Corner.BOTTOM_RIGHT)
-    {
-      viewportPoint = new Vector3(1, 0, 10);
-    }
-    else if (attachCorner == Corner.TOP_MIDDLE)
-    {
-      viewportPoint = new Vector3(0.5f, 1, 10);
-    }
-    else if (attachCorner == Corner.MIDDLE_RIGHT)
-    {
-      viewportPoint = new Vector3(1, 0.5f, 10);
-    }
-    else if (attachCorner == Corner.BOTTOM_MIDDLE)
-    {
-      viewportPoint = new Vector3(0.5f, 0, 10);
-    }
-    else if (attachCorner == Corner.MIDDLE_LEFT)
-    {
-      viewportPoint = new Vector3(0, 0.5f, 10);
+      case Corner.BOTTOM_LEFT:
+        {
+          viewportPoint = new Vector3(0, 0, 10);
+          break;
+        }
+      case Corner.TOP_LEFT:
+        {
+          viewportPoint = new Vector3(0, 1, 10);
+          break;
+        }
+      case Corner.TOP_RIGHT:
+        {
+          viewportPoint = new Vector3(1, 1, 10);
+          break;
+        }
+      case Corner.BOTTOM_RIGHT:
+        {
+          viewportPoint = new Vector3(1, 0, 10);
+          break;
+        }
+      case Corner.TOP_MIDDLE:
+        {
+          viewportPoint = new Vector3(0.5f, 1, 10);
+          break;
+        }
+      case Corner.MIDDLE_RIGHT:
+        {
+          viewportPoint = new Vector3(1, 0.5f, 10);
+          break;
+        }
+      case Corner.BOTTOM_MIDDLE:
+        {
+          viewportPoint = new Vector3(0.5f, 0, 10);
+          break;
+        }
+      case Corner.MIDDLE_LEFT:
+        {
+          viewportPoint = new Vector3(0, 0.5f, 10);
+          break;
+        }
     }
     transform.position = camera.ViewportToWorldPoint(viewportPoint);
   }

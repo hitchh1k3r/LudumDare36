@@ -31,7 +31,7 @@ public class UnitMover : MonoBehaviour
 
   public void MoveForward()
   {
-    queuedMoves.Enqueue(MoveTo(1.1f * Vector3.forward));
+    queuedMoves.Enqueue(MoveTo(1.0f * Vector3.forward));
   }
 
   public void TurnLeft()
