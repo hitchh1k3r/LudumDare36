@@ -136,6 +136,9 @@ public class HighlightEffect : MonoBehaviour
     RenderTexture temp1 = new RenderTexture(src.width, src.height, 0, RenderTextureFormat.ARGB32);
     RenderTexture temp2 = new RenderTexture(src.width, src.height, 0, RenderTextureFormat.ARGB32);
 
+    temp1.DiscardContents();
+    temp2.DiscardContents();
+
     highlightCam.CopyFrom(cam);
     highlightCam.cullingMask = highlightMask;
     highlightCam.targetTexture = temp1;
