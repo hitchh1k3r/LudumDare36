@@ -13,7 +13,7 @@ public class BuildingPrice : MonoBehaviour
 
   void OnMouseUpAsButton()
   {
-    if (researched)
+    if (researched && !ScoreTracker.instance.isSummaryShowing)
     {
       if (selected == null)
       {

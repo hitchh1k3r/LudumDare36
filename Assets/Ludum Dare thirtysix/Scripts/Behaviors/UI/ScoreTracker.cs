@@ -12,6 +12,13 @@ public class ScoreTracker : MonoBehaviour
   public List<ScoreEntry> upkeep = new List<ScoreEntry>();
   public List<ScoreEntry> income = new List<ScoreEntry>();
 
+  public static ScoreTracker instance;
+
+  void OnEnable()
+  {
+    instance = this;
+  }
+
   /*
     void OnEnable()
     {
