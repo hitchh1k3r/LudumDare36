@@ -12,6 +12,19 @@ ModelImporter:
     100008: Field_Top
     100010: Field_Middle
     100012: Field_Stalk
+    100014: Field_Corn
+    100016: Field_Stalk_001
+    100018: Field_Leaves
+    100020: Circle
+    100022: Field_Tree_Trunk
+    100024: Icosphere
+    100026: Crop_Corn
+    100028: Crop_Leaves
+    100030: Crop_Stalk
+    100032: Sapling_Leaf
+    100034: Sapling_Trunk
+    100036: Tree_Leaf
+    100038: Tree_Trunk
     400000: //RootNode
     400002: Pit_Bottom
     400004: Pit_Bottom_001
@@ -19,24 +32,76 @@ ModelImporter:
     400008: Field_Top
     400010: Field_Middle
     400012: Field_Stalk
+    400014: Field_Corn
+    400016: Field_Stalk_001
+    400018: Field_Leaves
+    400020: Circle
+    400022: Field_Tree_Trunk
+    400024: Icosphere
+    400026: Crop_Corn
+    400028: Crop_Leaves
+    400030: Crop_Stalk
+    400032: Sapling_Leaf
+    400034: Sapling_Trunk
+    400036: Tree_Leaf
+    400038: Tree_Trunk
     2300000: Pit_Bottom
     2300002: Pit_Bottom_001
     2300004: Field_Bottom
     2300006: Field_Top
     2300008: Field_Middle
     2300010: Field_Stalk
+    2300012: Field_Corn
+    2300014: Field_Stalk_001
+    2300016: Field_Leaves
+    2300018: Circle
+    2300020: Field_Tree_Trunk
+    2300022: Icosphere
+    2300024: Crop_Corn
+    2300026: Crop_Leaves
+    2300028: Crop_Stalk
+    2300030: Sapling_Leaf
+    2300032: Sapling_Trunk
+    2300034: Tree_Leaf
+    2300036: Tree_Trunk
     3300000: Pit_Bottom
     3300002: Pit_Bottom_001
     3300004: Field_Bottom
     3300006: Field_Top
     3300008: Field_Middle
     3300010: Field_Stalk
+    3300012: Field_Corn
+    3300014: Field_Stalk_001
+    3300016: Field_Leaves
+    3300018: Circle
+    3300020: Field_Tree_Trunk
+    3300022: Icosphere
+    3300024: Crop_Corn
+    3300026: Crop_Leaves
+    3300028: Crop_Stalk
+    3300030: Sapling_Leaf
+    3300032: Sapling_Trunk
+    3300034: Tree_Leaf
+    3300036: Tree_Trunk
     4300000: Pit_Bottom_001
     4300002: Pit_Bottom
     4300004: Field_Top
     4300006: Field_Bottom
     4300008: Field_Middle
     4300010: Field_Stalk
+    4300012: Field_Stalk_001
+    4300014: Field_Corn
+    4300016: Field_Leaves
+    4300018: Circle
+    4300020: Icosphere
+    4300022: Field_Tree_Trunk
+    4300024: Sapling_Leaf
+    4300026: Sapling_Trunk
+    4300028: Tree_Leaf
+    4300030: Tree_Trunk
+    4300032: Crop_Leaves
+    4300034: Crop_Corn
+    4300036: Crop_Stalk
     7400000: Default Take
     9500000: //RootNode
   materials:

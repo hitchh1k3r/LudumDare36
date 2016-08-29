@@ -6,14 +6,29 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Construct_Bottom
+    100004: Construct_Rubble
+    100006: Construct_Top
     400000: //RootNode
+    400002: Construct_Bottom
+    400004: Construct_Rubble
+    400006: Construct_Top
     2300000: //RootNode
+    2300002: Construct_Bottom
+    2300004: Construct_Rubble
+    2300006: Construct_Top
     3300000: //RootNode
+    3300002: Construct_Bottom
+    3300004: Construct_Rubble
+    3300006: Construct_Top
     4300000: Pit_Bottom
+    4300002: Construct_Top
+    4300004: Construct_Rubble
+    4300006: Construct_Bottom
     7400000: Default Take
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -39,7 +54,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importBlendShapes: 1
+    importBlendShapes: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -55,7 +70,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []
@@ -70,7 +85,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
