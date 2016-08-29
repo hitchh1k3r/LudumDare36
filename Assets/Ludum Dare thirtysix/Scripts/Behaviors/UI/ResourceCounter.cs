@@ -18,7 +18,7 @@ public class ResourceCounter : MonoBehaviour
 
   void Update()
   {
-    text.text = resourcePool.GetValue(displayType).ToString();
+    text.text = resourcePool.GetValue(displayType, false) + "/" + resourcePool.GetValue(displayType, true);
   }
 
 }

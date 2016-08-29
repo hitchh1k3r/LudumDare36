@@ -13,33 +13,36 @@ public class CameraMover : MonoBehaviour
 
   void Update()
   {
-    transform.position += moveSpeed * Time.deltaTime * (Quaternion.Euler(0, camera.eulerAngles.y, 0) * (Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.forward));
-    if (spin == null)
+    if (!ScoreTracker.instance.isSummaryShowing)
     {
-      if (Input.GetAxis("Rotate") < -0.5f)
+      transform.position += moveSpeed * Time.deltaTime * (Quaternion.Euler(0, camera.eulerAngles.y, 0) * (Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.forward));
+      if (spin == null)
       {
-        spin = StartCoroutine(SpinTo(transform.eulerAngles.y + 90));
+        if (Input.GetAxis("Rotate") < -0.5f)
+        {
+          spin = StartCoroutine(SpinTo(transform.eulerAngles.y + 90));
+        }
+        else if (Input.GetAxis("Rotate") > 0.5f)
+        {
+          spin = StartCoroutine(SpinTo(transform.eulerAngles.y - 90));
+        }
       }
-      else if (Input.GetAxis("Rotate") > 0.5f)
+      if (transform.position.x < tiles.transform.position.x)
       {
-        spin = StartCoroutine(SpinTo(transform.eulerAngles.y - 90));
+        transform.position = new Vector3(tiles.transform.position.x, transform.position.y, transform.position.z);
       }
-    }
-    if (transform.position.x < tiles.transform.position.x)
-    {
-      transform.position = new Vector3(tiles.transform.position.x, transform.position.y, transform.position.z);
-    }
-    if (transform.position.x > tiles.transform.position.x + tiles.width - 1)
-    {
-      transform.position = new Vector3(tiles.transform.position.x + tiles.width - 1, transform.position.y, transform.position.z);
-    }
-    if (transform.position.z < tiles.transform.position.z - tiles.height + 1)
-    {
-      transform.position = new Vector3(transform.position.x, transform.position.y, tiles.transform.position.z - tiles.height + 1);
-    }
-    if (transform.position.z > tiles.transform.position.z)
-    {
-      transform.position = new Vector3(transform.position.x, transform.position.y, tiles.transform.position.z);
+      if (transform.position.x > tiles.transform.position.x + tiles.width - 1)
+      {
+        transform.position = new Vector3(tiles.transform.position.x + tiles.width - 1, transform.position.y, transform.position.z);
+      }
+      if (transform.position.z < tiles.transform.position.z - tiles.height + 1)
+      {
+        transform.position = new Vector3(transform.position.x, transform.position.y, tiles.transform.position.z - tiles.height + 1);
+      }
+      if (transform.position.z > tiles.transform.position.z)
+      {
+        transform.position = new Vector3(transform.position.x, transform.position.y, tiles.transform.position.z);
+      }
     }
     if (Input.GetAxis("Horizontal") > -0.1f && Input.GetAxis("Horizontal") < 0.1f &&
         Input.GetAxis("Vertical") > -0.1f && Input.GetAxis("Vertical") < 0.1f)

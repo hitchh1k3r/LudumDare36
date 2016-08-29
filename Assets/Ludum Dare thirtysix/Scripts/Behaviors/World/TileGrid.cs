@@ -67,8 +67,8 @@ public class TileGrid : MonoBehaviour
     {
       if (block == terrain[i])
       {
-        int y = i % width;
-        int x = i - (y * width);
+        int x = i % width;
+        int y = i / width;
         return new Point(x, y);
       }
     }
@@ -97,18 +97,15 @@ public class TileGrid : MonoBehaviour
     GameObject ngo = Instantiate(prefab);
     ngo.transform.parent = transform;
     ngo.transform.localPosition = Vector3.right * x * tileSpacing + Vector3.back * y * tileSpacing + HeightOffset(x, y) * Vector3.up;
-    ngo.transform.localRotation = Quaternion.identity;
+    ngo.transform.localRotation = Quaternion.Euler(0, 90 * Random.Range(0, 4), 0);
     ngo.layer = gameObject.layer;
     terrain[i] = ngo;
   }
 
-  /*
-    public GameTile GetTile(int x, int y)
-    {
-      // DO ADDING
-      return null;
-    }
-  */
+  public GameObject GetTile(int x, int y)
+  {
+    return tiles[WorldGridIndex(x, y)];
+  }
 
   public void SetTile(int x, int y, GameObject prefab)
   {
@@ -123,7 +120,8 @@ public class TileGrid : MonoBehaviour
       GameObject ngo = Instantiate(prefab);
       ngo.transform.parent = transform;
       ngo.transform.localPosition = Vector3.right * x * tileSpacing + Vector3.back * y * tileSpacing + (HeightOffset(x, y) + 1) * Vector3.up;
-      ngo.transform.localRotation = Quaternion.identity;
+      ngo.transform.localRotation = Quaternion.Euler(0, 90 * Random.Range(0, 4), 0);
+      ngo.GetComponent<BuildingPrice>().enabled = false;
       tiles[i] = ngo;
     }
   }

@@ -5,35 +5,46 @@ public class Resources : MonoBehaviour
 {
 
   public Sprite timeIcon;
-  public Sprite villagerIcon;
-  public Sprite lumberIcon;
-  public Sprite cropsIcon;
-  public Sprite meatIcon;
+  public Sprite personIcon;
+  public Sprite animalIcon;
+  public Sprite woodIcon;
+  public Sprite stoneIcon;
+  public Sprite foodIcon;
 
-  public int villagers = 5;
-  public int lumber = 5;
-  public int crops = 5;
-  public int meat = 5;
+  public int person = 5;
+  public int personMax = 10;
+  public int animal = 0;
+  public int animalMax = 0;
+  public int wood = 10;
+  public int woodMax = 10;
+  public int stone = 10;
+  public int stoneMax = 10;
+  public int food = 20;
+  public int foodMax = 50;
 
-  public int GetValue(Type type)
+  public int GetValue(Type type, bool max)
   {
     switch (type)
     {
-      case Type.VILLAGER:
+      case Type.PERSON:
         {
-          return villagers;
+          return max ? personMax : person;
         }
-      case Type.LUMBER:
+      case Type.ANIMAL:
         {
-          return lumber;
+          return max ? animalMax : animal;
         }
-      case Type.CROP:
+      case Type.WOOD:
         {
-          return crops;
+          return max ? woodMax : wood;
         }
-      case Type.MEAT:
+      case Type.STONE:
         {
-          return meat;
+          return max ? stoneMax : stone;
+        }
+      case Type.FOOD:
+        {
+          return max ? foodMax : food;
         }
     }
     return 0;
@@ -47,21 +58,25 @@ public class Resources : MonoBehaviour
         {
           return timeIcon;
         }
-      case Type.VILLAGER:
+      case Type.PERSON:
         {
-          return villagerIcon;
+          return personIcon;
         }
-      case Type.LUMBER:
+      case Type.ANIMAL:
         {
-          return lumberIcon;
+          return animalIcon;
         }
-      case Type.CROP:
+      case Type.WOOD:
         {
-          return cropsIcon;
+          return woodIcon;
         }
-      case Type.MEAT:
+      case Type.STONE:
         {
-          return meatIcon;
+          return stoneIcon;
+        }
+      case Type.FOOD:
+        {
+          return foodIcon;
         }
     }
     return null;
@@ -75,21 +90,25 @@ public class Resources : MonoBehaviour
         {
           return "Turns";
         }
-      case Type.VILLAGER:
+      case Type.PERSON:
         {
-          return "Villagers";
+          return "Villager";
         }
-      case Type.LUMBER:
+      case Type.ANIMAL:
+        {
+          return "Animal";
+        }
+      case Type.WOOD:
         {
           return "Timber";
         }
-      case Type.CROP:
+      case Type.STONE:
         {
-          return "Crops";
+          return "Stone";
         }
-      case Type.MEAT:
+      case Type.FOOD:
         {
-          return "Meat";
+          return "Food";
         }
     }
     return null;
@@ -98,10 +117,11 @@ public class Resources : MonoBehaviour
   public enum Type
   {
     TIME,
-    VILLAGER,
-    LUMBER,
-    CROP,
-    MEAT
+    PERSON,
+    ANIMAL,
+    WOOD,
+    STONE,
+    FOOD
   }
 
 }
