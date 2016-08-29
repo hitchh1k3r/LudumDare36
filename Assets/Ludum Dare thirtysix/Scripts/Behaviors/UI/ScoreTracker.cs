@@ -19,29 +19,6 @@ public class ScoreTracker : MonoBehaviour
     instance = this;
   }
 
-  /*
-    void OnEnable()
-    {
-      scoreTrackerReferance.isSummaryShowing = true;
-
-      // BUILD SCREEN DATA HERE (also handle clearing old stuff)
-      Resources.GetName(lost[0].type)
-    }
-
-    void Update()
-    {
-      if(Input.GetButton("Click") || Input.GetButton("Active") || Input.GetButton("Cancel"))
-      {
-        enabled = false;
-      }
-    }
-
-    void OnDisable()
-    {
-      scoreTrackerReferance.isSummaryShowing = false;
-    }
-  */
-
   [System.Serializable]
   public struct ScoreEntry
   {
