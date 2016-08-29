@@ -68,13 +68,23 @@ public class WorldInteraction : MonoBehaviour
     {
       if (currentTile == null)
       {
-        world.SetTile(currentPoint.x, currentPoint.y, house);
-        HighlightEffect.RemoveHighlight(currentHover);
-        currentHover = null;
+        if (BuildMenu.activeTool.isPlaceable)
+        {
+          if (BuildMenu.activeTool.construction != null)
+          {
+            world.SetTile(currentPoint.x, currentPoint.y, BuildMenu.activeTool.construction);
+          }
+          else
+          {
+            world.SetTile(currentPoint.x, currentPoint.y, BuildingPrice.selected.prefab);
+          }
+          HighlightEffect.RemoveHighlight(currentHover);
+          currentHover = null;
+        }
       }
       else
       {
-        currentTile.GetComponent<GameTile>().ClickTile();
+        currentTile.GetComponent<GameTile>().ClickTile(world, currentPoint.x, currentPoint.y);
       }
     }
   }

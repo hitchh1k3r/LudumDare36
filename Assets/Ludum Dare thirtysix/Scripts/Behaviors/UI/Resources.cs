@@ -12,6 +12,7 @@ public class Resources : MonoBehaviour
   public Sprite foodIcon;
 
   public int person = 5;
+  public int personLive = 5;
   public int personMax = 10;
   public int animal = 0;
   public int animalMax = 0;

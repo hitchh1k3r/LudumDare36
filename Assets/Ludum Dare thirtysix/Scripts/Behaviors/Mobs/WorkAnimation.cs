@@ -8,7 +8,7 @@ public class WorkAnimation : MonoBehaviour
   private Vector3 originalPosition;
   private Vector3 originalRotation;
 
-  void Start()
+  void OnEnable()
   {
     originalPosition = transform.localPosition;
     originalRotation = transform.localRotation.eulerAngles;

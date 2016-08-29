@@ -121,7 +121,13 @@ public class TileGrid : MonoBehaviour
       ngo.transform.parent = transform;
       ngo.transform.localPosition = Vector3.right * x * tileSpacing + Vector3.back * y * tileSpacing + (HeightOffset(x, y) + 1) * Vector3.up;
       ngo.transform.localRotation = Quaternion.Euler(0, 90 * Random.Range(0, 4), 0);
-      ngo.GetComponent<BuildingPrice>().enabled = false;
+      foreach (Transform trans in ngo.GetComponentsInChildren<Transform>(true))
+      {
+        trans.gameObject.layer = 0;
+      }
+      BuildingPrice price = ngo.GetComponent<BuildingPrice>();
+      price.enabled = false;
+      BuildMenu.instance.BroadcastMessage("BuildingComplete", price.type);
       tiles[i] = ngo;
     }
   }

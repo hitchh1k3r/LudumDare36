@@ -1,1 +1,621 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"OnD",
+				"OnDisable"
+			],
+			[
+				"Get",
+				"GetMesopotamian()	Mesopotamian"
+			],
+			[
+				"Remo",
+				"RemoveAt(int index)	void"
+			],
+			[
+				"Me",
+				"Mesopotamian	Mesopotamian"
+			],
+			[
+				"mes",
+				"mesopotameians	List<Mesopotamian>"
+			],
+			[
+				"na",
+				"names	string[]"
+			],
+			[
+				"Ass",
+				"CreateAssetMenuAttribute	CreateAssetMenuAttribute"
+			],
+			[
+				"Menu",
+				"MenuItem	MenuItem"
+			],
+			[
+				"Screen",
+				"ScreenToWorldPoint(Vector3 position)	Vector3"
+			],
+			[
+				"ani",
+				"animalMax	int"
+			],
+			[
+				"per",
+				"personIcon	Sprite"
+			],
+			[
+				"anim",
+				"animalIcon	Sprite"
+			],
+			[
+				"Ra",
+				"Range(int min, int max)	int"
+			],
+			[
+				"OnMouse",
+				"OnMouseOver"
+			],
+			[
+				"SendMessage",
+				"SendMessage(string methodName, SendMessageOptions options)	void"
+			],
+			[
+				"game",
+				"GameObject	GameObject"
+			],
+			[
+				"Hi",
+				"HighlightEffect	HighlightEffect"
+			],
+			[
+				"GetCom",
+				"GetComponents<T>()	T[]"
+			],
+			[
+				"cure",
+				"currentTile	GameObject"
+			],
+			[
+				"cu",
+				"currentTile	GameObject"
+			],
+			[
+				"current",
+				"currentPoint	Point"
+			],
+			[
+				"Build",
+				"BuildingPrice	BuildingPrice"
+			],
+			[
+				"GetB",
+				"GetButtonDown(string buttonName)	bool"
+			],
+			[
+				"SetT",
+				"SetTile(int x, int y, GameObject prefab)	void"
+			],
+			[
+				"F",
+				"HeightOffset(int x, int y)	float"
+			],
+			[
+				"hi",
+				"highFromHighlighter	bool"
+			],
+			[
+				"st",
+				"state	SpecialStates"
+			],
+			[
+				"Ray",
+				"RaycastHit	RaycastHit"
+			],
+			[
+				"Layer",
+				"SortingLayer	SortingLayer"
+			],
+			[
+				"tiles",
+				"tiles	GameObject[]"
+			],
+			[
+				"tiel",
+				"tileMap	TileMapEntry[]"
+			],
+			[
+				"GetC",
+				"GetChild(int index)	Transform"
+			],
+			[
+				"GetChi",
+				"GetChildCount()	int"
+			],
+			[
+				"co",
+				"color	Color"
+			],
+			[
+				"AddCompon",
+				"AddComponent<T>()	T"
+			],
+			[
+				"re",
+				"researchCosts	Cost[]"
+			],
+			[
+				"OnMouseUp",
+				"OnMouseUpAsButton"
+			],
+			[
+				"GetA",
+				"GetAxis(string axisName)	float"
+			],
+			[
+				"meat",
+				"meatIcon	Sprite"
+			],
+			[
+				"view",
+				"ViewportToWorldPoint(Vector3 position)	Vector3"
+			],
+			[
+				"del",
+				"deltaRotation	float"
+			],
+			[
+				"old",
+				"oldRot	Vector3"
+			],
+			[
+				"Qua",
+				"QuadInOut(float a, float b, float t)	float"
+			],
+			[
+				"lo",
+				"localRotation	Quaternion { get; set; }"
+			],
+			[
+				"cro",
+				"cropsIcon	Sprite"
+			],
+			[
+				"lumb",
+				"lumberIcon	Sprite"
+			],
+			[
+				"villa",
+				"villagerIcon	Sprite"
+			],
+			[
+				"Distro",
+				"DestroyImmediate(Object obj, bool allowDestroyingAssets)	void"
+			],
+			[
+				"RenderText",
+				"RenderTexture(int width, int height, int depth)	RenderTexture(int width, int height, int depth)"
+			],
+			[
+				"d",
+				"DiscardContents()	void"
+			],
+			[
+				"mo",
+				"moveType	MoveStyle"
+			],
+			[
+				"Q",
+				"QuadInOut(float a, float b, float t)	float"
+			],
+			[
+				"bo",
+				"bounce	float"
+			],
+			[
+				"Mat",
+				"Mathf	Mathf"
+			],
+			[
+				"ro",
+				"rotation	Quaternion { get; set; }"
+			],
+			[
+				"Vector",
+				"Vector3	Vector3"
+			],
+			[
+				"Cour",
+				"Coroutine	Coroutine"
+			],
+			[
+				"acti",
+				"activeSelf	bool { get; }"
+			],
+			[
+				"Res",
+				"Resources	Resources"
+			],
+			[
+				"sha",
+				"shadowStrength	float { get; set; }"
+			],
+			[
+				"Vec",
+				"Vector3()	Vector3()"
+			],
+			[
+				"ta",
+				"targetColor	Color"
+			],
+			[
+				"tra",
+				"transformTime	float"
+			],
+			[
+				"IEnu",
+				"IEnumerator	IEnumerator"
+			],
+			[
+				"g",
+				"grey	Color { get; }"
+			],
+			[
+				"Ma",
+				"Mathf	Mathf"
+			],
+			[
+				"blow",
+				"blowLength	float"
+			],
+			[
+				"Audi",
+				"AudioSource	AudioSource"
+			],
+			[
+				"Re",
+				"RequireComponent	RequireComponent"
+			],
+			[
+				"Au",
+				"AudioSource()	AudioSource()"
+			],
+			[
+				"Spec",
+				"GetSpectrumData(float[] samples, int channel, FFTWindow window)	void"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 174.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Editor",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Library",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders"
+	],
+	"file_history":
+	[
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/MesopotamianRandomizer.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/MesopotamianGenerator.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/RandomName.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/Resources.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ResourceCounter.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Input/CameraMover.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/WorkAnimation.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/VillagerPool.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/UnitMover.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/TileGrid.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/BuildingPrice.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/WorldInteraction.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/MaterialRandomizer.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Scriptable Objects/NameDatabase.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/StatusReportDisplay.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/SpecialStates.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/GameTile.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ContinueClicker.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/HighlightEffect.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/SpecialState.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders/Aura Overlay.shader",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ScreenRelative.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/CameraTestSpin.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/EnableOnStart.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/BuildMenu.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ScoreTracker.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/.gitignore",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Library/Ease.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/CostDisplay.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders/Aura Shader.shader",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/Aura.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders/Debug Half Blend.shader",
+		"//RASPBERRYTAU/RaspTauNAS/STORAGE/seettings/audo/HighlightEffect.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/Billboard.cs",
+		"//192.168.1.18/RaspTauNAS/STORAGE/seettings/audo/Aura.cs",
+		"//192.168.1.18/RaspTauNAS/STORAGE/seettings/audo/Half Blend.shader",
+		"//192.168.1.18/RaspTauNAS/STORAGE/seettings/audo/Water Shader.shader",
+		"//192.168.1.18/RaspTauNAS/STORAGE/seettings/audo/Magic Icon.shader",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders/Outline.shader",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Standard Assets/Effects/ImageEffects/Scripts/Grayscale.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders/Basic.shader",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Materials/UI/stub.txt",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/DayNightLight.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/CameraTestSpin.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/EnableOnStart.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Resources.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/ResourceCounter.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Font/Open Font License.markdown",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Font/readme.markdown",
+		"//192.168.1.18/RaspTauNAS/STORAGE/seettings/LudumDareThirtysix/ludum_dare_36.sublime-project",
+		"/C/Users/ghold/AppData/Roaming/Sublime Text 3/Packages/OmniSharp/PrebuiltOmniSharpServer/config.json",
+		"/C/Users/ghold/Development/Unity/PlayingWithVive/PlayingWithVive.sublime-project",
+		"/C/Users/ghold/Development/Unity/PlayingWithVive/Assets/RedirectedAngleGradiant.cs",
+		"/C/Users/ghold/Downloads/content_database_ModDownloads_2016-08-17.dump.sql",
+		"/C/Users/ghold/Downloads/mcp_snapshot-20160301-1.8.9/params.csv",
+		"/C/Users/ghold/Downloads/CodeChickenCore-1.9.4-2.0.6.75-universal/dependencies.info",
+		"/C/Users/ghold/Downloads/mcp_snapshot-20160301-1.8.9/fields.csv",
+		"/C/Users/ghold/Downloads/mcp_snapshot-20160301-1.8.9/methods.csv",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/server.properties",
+		"/C/Users/ghold/client_hitch.ovpn",
+		"/C/Users/ghold/Desktop/hosts",
+		"/C/Users/ghold/Development/Java/lib/forge-1.9.4-12.17.0.1976-mdk/forge-1.9.4-12.17.0.1976-mdk.iml",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/forge-1.9.4-1976/forge-1.9.4-1976.iml",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/ModSync/build/libs/modsync-1.0/META-INF/MANIFEST.MF",
+		"/C/Users/ghold/Development/git/TorchLevers/build.gradle",
+		"/C/Users/ghold/Development/git/MakersMark/build.gradle",
+		"/C/Users/ghold/Development/git/CaptureTheFlag/build.gradle",
+		"/C/Users/ghold/Development/Java/lib/forge-1.8.9-11.15.1.1722-mdk/forge-1.8.9-11.15.1.1722-mdk.iml",
+		"/C/Users/ghold/Development/git/CaptureTheFlag/build-win.bat",
+		"/C/Users/ghold/Documents/SSH Keys/hitch_guide.ppk",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/mods/1.8.9/torchlevers-2.0Pre1.jar",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/mods/1.8.9/makersmark-2.0.3.jar",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/mods/1.8.9/ctf-1.0.jar",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/config/splash.properties",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/log4j2.xml",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/config/forge.cfg",
+		"/C/Users/ghold/Desktop/merge/META-INF/MANIFEST.MF",
+		"/C/Users/ghold/Desktop/MANIFEST.MF",
+		"/C/Users/ghold/Desktop/merge/mcmod.info",
+		"/C/Users/ghold/Desktop/merge/pack.mcmeta",
+		"/C/Users/ghold/Desktop/params.csv",
+		"/C/Users/ghold/Desktop/methods.csv",
+		"/C/Users/ghold/Desktop/fields.csv",
+		"/C/Users/ghold/Development/Java/workspaces/MCMods/config/HitchH1k3rsMods.cfg",
+		"//192.168.1.18/RaspTauNAS/STORAGE/mc_intelliij.txt"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"meatIcon",
+			"SetTile",
+			"WorldGridIndex",
+			";\n",
+			"MoveTo",
+			"moveTime",
+			"0 *",
+			"half",
+			"0 *",
+			"Queue",
+			"",
+			"\n    ",
+			"_fSample",
+			"2016-8-20",
+			"'",
+			"\\'",
+			"' . $date . '",
+			"'",
+			"\");",
+			"ModVersonID",
+			"''",
+			"$ver_id$",
+			"$mod_id$",
+			"$download_url$",
+			"$date$",
+			"'",
+			"z:",
+			"{new",
+			"sum",
+			"	",
+			"recentlyHit",
+			"processPlayerBlockPlacement",
+			",onItemUse,",
+			"onItemUse",
+			"77659",
+			"onItemRightClick",
+			"getItemUseAction",
+			"onItemUseFinish",
+			"onPlayerStoppedUsing",
+			"[",
+			"[11:17:",
+			"[11:",
+			",player,",
+			",\n",
+			"70441",
+			"addItemStackToInventory",
+			"/Users/hitchh1k3r/",
+			"renderWorldBorder",
+			"p_180449_1_",
+			",distance,",
+			",distance,0",
+			",distance,",
+			",distance",
+			"distance",
+			"destroyStage",
+			"p_180449_1_",
+			"partialTicks",
+			"worldBorder",
+			"provideChunk",
+			"}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 206.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 206.0
+	},
+	"pinned_build_system": "",
+	"project": "ludum_dare_36.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
