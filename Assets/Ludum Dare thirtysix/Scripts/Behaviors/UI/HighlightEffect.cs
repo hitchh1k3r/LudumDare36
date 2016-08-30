@@ -14,7 +14,7 @@ public class HighlightEffect : MonoBehaviour
   private Material debug;
   private static int highlightLayer = 0;
 
-  public static void AddHighlight(GameObject gameobject, Color color)
+  public static void AddHighlight(GameObject gameobject, Color color, bool force = false)
   {
     if (aura != null)
     {
@@ -43,7 +43,7 @@ public class HighlightEffect : MonoBehaviour
               if (filter != null)
               {
                 SpecialStates state = renderer.GetComponent<SpecialStates>();
-                if (state == null || !state.hideFromHighlighter)
+                if (state == null || force || !state.hideFromHighlighter)
                 {
                   MeshRenderer nr = new GameObject().AddComponent<MeshRenderer>();
                   nr.transform.SetParent(renderer.transform);

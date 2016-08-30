@@ -8,10 +8,14 @@ public class WorkAnimation : MonoBehaviour
   private Vector3 originalPosition;
   private Vector3 originalRotation;
 
-  void OnEnable()
+  void Awake()
   {
     originalPosition = transform.localPosition;
     originalRotation = transform.localRotation.eulerAngles;
+  }
+
+  void OnEnable()
+  {
     timer += Random.Range(0, 2 * Mathf.PI);
   }
 

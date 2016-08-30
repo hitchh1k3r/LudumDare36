@@ -15,7 +15,10 @@ public class MesopotamianRandomizer : MonoBehaviour
     doNotReleaseName = false;
     mesopotamian = MesopotamianGenerator.instance.GetMesopotamian();
     text.text = mesopotamian.mesopoNAMEian;
-    shadow.text = mesopotamian.mesopoNAMEian;
+    if (shadow != null)
+    {
+      shadow.text = mesopotamian.mesopoNAMEian;
+    }
 
     renderer.sharedMaterial = mesopotamian.MATERIAtamian;
   }

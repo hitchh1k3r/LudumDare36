@@ -4,12 +4,19 @@ using System.Collections;
 public class CameraMover : MonoBehaviour
 {
 
+  public static CameraMover instance;
+
   public TileGrid tiles;
   public Transform camera;
   public float spinTime = 0.5f;
   public float moveSpeed = 10;
 
   private Coroutine spin;
+
+  void OnEnable()
+  {
+    instance = this;
+  }
 
   void Update()
   {
@@ -43,11 +50,12 @@ public class CameraMover : MonoBehaviour
       {
         transform.position = new Vector3(transform.position.x, transform.position.y, tiles.transform.position.z);
       }
-    }
-    if (Input.GetAxis("Horizontal") > -0.1f && Input.GetAxis("Horizontal") < 0.1f &&
-        Input.GetAxis("Vertical") > -0.1f && Input.GetAxis("Vertical") < 0.1f)
-    {
-      transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Round(transform.position.x), transform.position.y, Mathf.Round(transform.position.z)), 10 * Time.deltaTime);
+
+      if (Input.GetAxis("Horizontal") > -0.1f && Input.GetAxis("Horizontal") < 0.1f &&
+          Input.GetAxis("Vertical") > -0.1f && Input.GetAxis("Vertical") < 0.1f)
+      {
+        transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Round(transform.position.x), transform.position.y, Mathf.Round(transform.position.z)), 10 * Time.deltaTime);
+      }
     }
   }
 

@@ -4,6 +4,11 @@ using System.Collections;
 public class Resources : MonoBehaviour
 {
 
+  // NOTE (hitch) at some point (6 hours before deadline) I decided everything can be a singleton!!!
+  public static Resources instance;
+
+  public GameObject workCostDisplay;
+
   public Sprite timeIcon;
   public Sprite personIcon;
   public Sprite animalIcon;
@@ -23,10 +28,53 @@ public class Resources : MonoBehaviour
   public int food = 20;
   public int foodMax = 50;
 
+  public void AddResources(BuildingPrice.Cost[] resources)
+  {
+    foreach (BuildingPrice.Cost resource in resources)
+    {
+      int val = GetValue(resource.type, false) + resource.amount;
+      if (val > GetValue(resource.type, true))
+      {
+        val = GetValue(resource.type, true);
+      }
+      SetValue(resource.type, val, false);
+    }
+  }
+
+  public bool TryBuy(BuildingPrice.Cost[] costs)
+  {
+    bool okay = true;
+    foreach (BuildingPrice.Cost cost in costs)
+    {
+      if (cost.amount > GetValue(cost.type, false))
+      {
+        okay = false;
+        break;
+      }
+    }
+    if (okay)
+    {
+      foreach (BuildingPrice.Cost cost in costs)
+      {
+        SetValue(cost.type, GetValue(cost.type, false) - cost.amount, false);
+      }
+    }
+    return okay;
+  }
+
+  void OnEnable()
+  {
+    instance = this;
+  }
+
   public int GetValue(Type type, bool max)
   {
     switch (type)
     {
+      case Type.TIME:
+        {
+          return 999;
+        }
       case Type.PERSON:
         {
           return max ? personMax : person;
@@ -49,6 +97,73 @@ public class Resources : MonoBehaviour
         }
     }
     return 0;
+  }
+
+  public void SetValue(Type type, int value, bool max)
+  {
+    switch (type)
+    {
+      case Type.PERSON:
+        {
+          if (max)
+          {
+            personMax = value;
+          }
+          else
+          {
+            person = value;
+          }
+        }
+        break;
+      case Type.ANIMAL:
+        {
+          if (max)
+          {
+            animalMax = value;
+          }
+          else
+          {
+            animal = value;
+          }
+        }
+        break;
+      case Type.WOOD:
+        {
+          if (max)
+          {
+            woodMax = value;
+          }
+          else
+          {
+            wood = value;
+          }
+        }
+        break;
+      case Type.STONE:
+        {
+          if (max)
+          {
+            stoneMax = value;
+          }
+          else
+          {
+            stone = value;
+          }
+        }
+        break;
+      case Type.FOOD:
+        {
+          if (max)
+          {
+            foodMax = value;
+          }
+          else
+          {
+            food = value;
+          }
+        }
+        break;
+    }
   }
 
   public Sprite GetIcon(Type type)

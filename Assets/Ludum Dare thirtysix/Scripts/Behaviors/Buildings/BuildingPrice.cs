@@ -6,6 +6,8 @@ public class BuildingPrice : MonoBehaviour
 
   public string type;
   public bool isPlaceable;
+  public float heightOffset = 1;
+  public bool hidesTerrain;
   public GameObject construction;
   public string requirement;
   public Cost[] buildCosts;
@@ -22,7 +24,7 @@ public class BuildingPrice : MonoBehaviour
     // STUB SO UNITY CAN DISABLE THIS SCRIPT
   }
 
-  void BuildingComplete(string type)
+  public void BuildingComplete(string type)
   {
     if (type == requirement)
     {
@@ -44,27 +46,13 @@ public class BuildingPrice : MonoBehaviour
   {
     if (enabled && requirement == "" && !ScoreTracker.instance.isSummaryShowing)
     {
-      if (selected == null)
-      {
-        HighlightEffect.AddHighlight(gameObject, selectionColor);
-        selected = this;
-        BuildMenu.activeTool = this;
-      }
-      else
+      if (selected != null)
       {
         HighlightEffect.RemoveHighlight(selected.gameObject);
-        if (gameObject != selected)
-        {
-          HighlightEffect.AddHighlight(gameObject, selectionColor);
-          selected = this;
-          BuildMenu.activeTool = this;
-        }
-        else
-        {
-          selected = null;
-          BuildMenu.activeTool = null;
-        }
       }
+      HighlightEffect.AddHighlight(gameObject, selectionColor, true);
+      selected = this;
+      BuildMenu.activeTool = this;
     }
   }
 

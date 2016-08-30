@@ -21,7 +21,7 @@ public class BuildMenu : MonoBehaviour
 
   void Update()
   {
-    if(!init)
+    if (!init)
     {
       init = true;
       int i = 0;
@@ -35,8 +35,9 @@ public class BuildMenu : MonoBehaviour
   private int AddToMenu(int i, GameObject go)
   {
     Transform menuItem = Instantiate(go).transform;
+    menuItem.gameObject.GetComponent<BuildingPrice>().enabled = true;
     menuItem.parent = transform;
-    menuItem.localPosition = i * 1.57f * Vector3.down;
+    menuItem.localPosition = i * (1.57f + ((i % 2 == 1) ? 0.1f : 0)) * Vector3.down + ((i % 2 == 1) ? 1.5f : 0) * Vector3.right;
     menuItem.rotation = itemRotation;
     menuItem.localScale = Vector3.one;
     foreach (Transform trans in menuItem.gameObject.GetComponentsInChildren<Transform>(true))

@@ -4,6 +4,250 @@
 		"selected_items":
 		[
 			[
+				"wor",
+				"working	bool"
+			],
+			[
+				"GetCom",
+				"GetComponentsInChildren<T>()	T[]"
+			],
+			[
+				"per",
+				"personLive	int"
+			],
+			[
+				"Ma",
+				"Matrix4x4	Matrix4x4"
+			],
+			[
+				"re",
+				"currentResolution	Resolution { get; }"
+			],
+			[
+				"cam",
+				"cameraAngle	float"
+			],
+			[
+				"lo",
+				"localPosition	Vector3 { get; set; }"
+			],
+			[
+				"l",
+				"localPosition	Vector3 { get; set; }"
+			],
+			[
+				"GetC",
+				"GetComponentsInChildren<T>()	T[]"
+			],
+			[
+				"Ra",
+				"Range(float min, float max)	float"
+			],
+			[
+				"max",
+				"Max(int a, int b)	int"
+			],
+			[
+				"work",
+				"workGain	Cost[]"
+			],
+			[
+				"GetBu",
+				"GetButton(string buttonName)	bool"
+			],
+			[
+				"en",
+				"enableNextFrame	GameObject"
+			],
+			[
+				"GetButt",
+				"GetButtonUp(string buttonName)	bool"
+			],
+			[
+				"Game",
+				"GameObject	GameObject"
+			],
+			[
+				"Confi",
+				"ExitConfirm	ExitConfirm"
+			],
+			[
+				"Leve",
+				"LoadLevel(int index)	void"
+			],
+			[
+				"C",
+				"CeilToInt(float f)	int"
+			],
+			[
+				"ma",
+				"personMax	int"
+			],
+			[
+				"Range",
+				"Range(int min, int max)	int"
+			],
+			[
+				"Bro",
+				"BroadcastMessage(string methodName, SendMessageOptions options)	void"
+			],
+			[
+				"Stat",
+				"StatusReportDisplay	StatusReportDisplay"
+			],
+			[
+				"Meso",
+				"MesopotamianRandomizer	MesopotamianRandomizer"
+			],
+			[
+				"peo",
+				"personLive	int"
+			],
+			[
+				"move",
+				"moveType	MoveStyle"
+			],
+			[
+				"SetTerr",
+				"SetTerrain(int x, int y, GameObject prefab)	void"
+			],
+			[
+				"time",
+				"timeLeft	float"
+			],
+			[
+				"hi",
+				"hideInWorld	bool"
+			],
+			[
+				"local",
+				"localPosition	Vector3 { get; set; }"
+			],
+			[
+				"TextMes",
+				"TextMeshShadow	TextMeshShadow"
+			],
+			[
+				"new",
+				"newText	Transform"
+			],
+			[
+				"gam",
+				"gameObject	GameObject { get; }"
+			],
+			[
+				"rare",
+				"rareNamesList	string"
+			],
+			[
+				"Roun",
+				"RoundStage	RoundStage"
+			],
+			[
+				"sho",
+				"shortCircuit	bool"
+			],
+			[
+				"IEnume",
+				"IEnumerator	IEnumerator"
+			],
+			[
+				"hide",
+				"hidesTerrain	bool"
+			],
+			[
+				"indi",
+				"indicatorContainer	GameObject"
+			],
+			[
+				"Max",
+				"Max(int a, int b)	int"
+			],
+			[
+				"day",
+				"dayCounter	int"
+			],
+			[
+				"Ran",
+				"Range(int min, int max)	int"
+			],
+			[
+				"mo",
+				"movement	Coroutine"
+			],
+			[
+				"Bo",
+				"BroadcastMessage(string methodName, object parameter)	void"
+			],
+			[
+				"SetTra",
+				"SetTerrain(int x, int y, GameObject prefab)	void"
+			],
+			[
+				"Ro",
+				"RoundToInt(float f)	int"
+			],
+			[
+				"pe",
+				"person	int"
+			],
+			[
+				"cost",
+				"buildCosts	Cost[]"
+			],
+			[
+				"state",
+				"stateTracker	bool"
+			],
+			[
+				"night",
+				"nightPallet	Color[]"
+			],
+			[
+				"nigh",
+				"nightColor	Color"
+			],
+			[
+				"taget",
+				"targetNightColor	Color"
+			],
+			[
+				"tar",
+				"targetDayColor	Color"
+			],
+			[
+				"targ",
+				"targetNightColors	Color"
+			],
+			[
+				"sha",
+				"shadowStrength	float { get; set; }"
+			],
+			[
+				"Build",
+				"BuildingPrice	BuildingPrice"
+			],
+			[
+				"SendMessage",
+				"SendMessageUpwards(string methodName, object value)	void"
+			],
+			[
+				"Cost",
+				"CostDisplay	CostDisplay"
+			],
+			[
+				"GetComponent",
+				"GetComponentInChildren<T>()	T"
+			],
+			[
+				"ac",
+				"activeTool	BuildingPrice"
+			],
+			[
+				"Bui",
+				"BuildingPrice	BuildingPrice"
+			],
+			[
 				"OnD",
 				"OnDisable"
 			],
@@ -44,24 +288,12 @@
 				"animalMax	int"
 			],
 			[
-				"per",
-				"personIcon	Sprite"
-			],
-			[
 				"anim",
 				"animalIcon	Sprite"
 			],
 			[
-				"Ra",
-				"Range(int min, int max)	int"
-			],
-			[
 				"OnMouse",
 				"OnMouseOver"
-			],
-			[
-				"SendMessage",
-				"SendMessage(string methodName, SendMessageOptions options)	void"
 			],
 			[
 				"game",
@@ -70,10 +302,6 @@
 			[
 				"Hi",
 				"HighlightEffect	HighlightEffect"
-			],
-			[
-				"GetCom",
-				"GetComponents<T>()	T[]"
 			],
 			[
 				"cure",
@@ -88,10 +316,6 @@
 				"currentPoint	Point"
 			],
 			[
-				"Build",
-				"BuildingPrice	BuildingPrice"
-			],
-			[
 				"GetB",
 				"GetButtonDown(string buttonName)	bool"
 			],
@@ -102,10 +326,6 @@
 			[
 				"F",
 				"HeightOffset(int x, int y)	float"
-			],
-			[
-				"hi",
-				"highFromHighlighter	bool"
 			],
 			[
 				"st",
@@ -128,10 +348,6 @@
 				"tileMap	TileMapEntry[]"
 			],
 			[
-				"GetC",
-				"GetChild(int index)	Transform"
-			],
-			[
 				"GetChi",
 				"GetChildCount()	int"
 			],
@@ -142,10 +358,6 @@
 			[
 				"AddCompon",
 				"AddComponent<T>()	T"
-			],
-			[
-				"re",
-				"researchCosts	Cost[]"
 			],
 			[
 				"OnMouseUp",
@@ -176,10 +388,6 @@
 				"QuadInOut(float a, float b, float t)	float"
 			],
 			[
-				"lo",
-				"localRotation	Quaternion { get; set; }"
-			],
-			[
 				"cro",
 				"cropsIcon	Sprite"
 			],
@@ -202,10 +410,6 @@
 			[
 				"d",
 				"DiscardContents()	void"
-			],
-			[
-				"mo",
-				"moveType	MoveStyle"
 			],
 			[
 				"Q",
@@ -240,10 +444,6 @@
 				"Resources	Resources"
 			],
 			[
-				"sha",
-				"shadowStrength	float { get; set; }"
-			],
-			[
 				"Vec",
 				"Vector3()	Vector3()"
 			],
@@ -262,10 +462,6 @@
 			[
 				"g",
 				"grey	Color { get; }"
-			],
-			[
-				"Ma",
-				"Mathf	Mathf"
 			],
 			[
 				"blow",
@@ -291,6 +487,209 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/MobSpawner.cs",
+			"settings":
+			{
+				"buffer_size": 565,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "using UnityEngine;\nusing System.Collections;\nusing System.Collections.Generic;\n\npublic class UnitMover : MonoBehaviour\n{\n\n  public static int moverCount;\n\n  public GameObject animalPit;\n\n  public float moveTime = 1;\n  public float turnTime = 0.5f;\n  public MoveStyle moveType;\n\n  private Queue<IEnumerator> queuedMoves = new Queue<IEnumerator>();\n  private Coroutine movement;\n  private float timer;\n  private bool disablePathing;\n\n  void OnEnable()\n  {\n    ++moverCount;\n  }\n\n  void OnDisable()\n  {\n    --moverCount;\n  }\n\n  void Update()\n  {\n    if (!disablePathing && !ScoreTracker.instance.isSummaryShowing)\n    {\n      if (queuedMoves.Count == 0)\n      {\n        queuedMoves.Enqueue(Path());\n      }\n\n      if (movement == null && queuedMoves.Count > 0)\n      {\n        movement = StartCoroutine(queuedMoves.Dequeue());\n      }\n    }\n  }\n\n  void RoundEnd()\n  {\n    StartCoroutine(Despawn());\n  }\n\n  private IEnumerator Despawn()\n  {\n    disablePathing = true;\n    yield return movement;\n    yield return ScaleTo(Vector3.zero, 0.25f);\n    Destroy(gameObject);\n  }\n\n  private IEnumerator Path()\n  {\n    Vector3 block = transform.position + transform.forward;\n    Vector3 left = transform.position + 0.5f * transform.forward - 0.5f * transform.right;\n    Vector3 right = transform.position + 0.5f * transform.forward + 0.5f * transform.right;\n    int xLeft = Mathf.RoundToInt(left.x);\n    int yLeft = -Mathf.RoundToInt(left.z);\n    int xRight = Mathf.RoundToInt(right.x);\n    int yRight = -Mathf.RoundToInt(right.z);\n\n    if (block.x < -1 || block.z > 1 || block.x > TileGrid.instance.width || block.z < -TileGrid.instance.height)\n    {\n      StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));\n      yield return StartCoroutine(MoveTo(Vector3.forward));\n      Destroy(gameObject);\n      yield break;\n    }\n\n    if (InteractWith(xLeft, yLeft))\n    {\n      disablePathing = true;\n      StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));\n      yield return StartCoroutine(MoveTo(1 * Vector3.forward));\n      Destroy(gameObject);\n      yield break;\n    }\n    if (InteractWith(xRight, yRight))\n    {\n      disablePathing = true;\n      StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));\n      yield return StartCoroutine(MoveTo(1 * Vector3.forward));\n      Destroy(gameObject);\n      yield break;\n    }\n\n    if (TileGrid.instance.GetPassable(xLeft, yLeft) || TileGrid.instance.GetPassable(xRight, yRight))\n    {\n      yield return MoveTo(1.0f * Vector3.forward);\n    }\n    else\n    {\n      yield return TurnTo(90 * ((Random.Range(0, 2) * 2) - 1));\n    }\n  }\n\n  private bool InteractWith(int x, int y)\n  {\n    GameObject go = TileGrid.instance.GetTile(x, y);\n    if (go != null)\n    {\n      BuildingPrice price = go.GetComponent<BuildingPrice>();\n      if (price.type == \"pit\")\n      {\n        TileGrid.instance.SetTile(x, y, animalPit);\n        return true;\n      }\n\n      GameTile tile = go.GetComponent<GameTile>();\n      if (moveType == MoveStyle.STALK)\n      {\n        if ((price.type == \"baby_tree\" || price.type == \"baby_crop\" || price.type == \"crop\") && !tile.working)\n        {\n          Destroy(go);\n          return true;\n        }\n      }\n      else if (moveType == MoveStyle.WADDLE)\n      {\n        if (tile.working && price.type == \"fence\")\n        {\n          MesopotamianRandomizer[] people = go.GetComponentsInChildren<MesopotamianRandomizer>();\n          foreach (MesopotamianRandomizer person in people)\n          {\n            person.doNotReleaseName = true;\n          }\n          ScoreTracker.instance.AddLost(Resources.Type.PERSON, people.Length);\n          Resources.instance.personLive -= people.Length;\n          tile.working = false;\n          foreach (SpecialStates child in go.GetComponentsInChildren<SpecialStates>(true))\n          {\n            if (child.activeOnWork)\n            {\n              child.gameObject.SetActive(false);\n            }\n          }\n          return true;\n        }\n      }\n    }\n    return false;\n  }\n\n  private IEnumerator TurnTo(float deltaRotation)\n  {\n    Vector3 oldRot = transform.eulerAngles;\n    Vector3 oldPos = transform.position;\n    timer = 0;\n    while (timer < turnTime)\n    {\n      timer += Time.deltaTime;\n      float t = timer / turnTime;\n      float bounce = Ease.QuadPop(0, 2, t);\n      if (bounce > 1)\n      {\n        bounce = 2 - bounce;\n      }\n      if (moveType == MoveStyle.WADDLE)\n      {\n        bounce *= 0.1f;\n      }\n      else if (moveType == MoveStyle.STALK)\n      {\n        bounce *= 0.25f;\n      }\n      transform.position = oldPos + bounce * Vector3.up;\n      transform.rotation = Quaternion.Euler(oldRot.x, oldRot.y + Ease.QuadInOut(0, 1, t) * deltaRotation, oldRot.z);\n      yield return null;\n    }\n    transform.rotation = Quaternion.Euler(oldRot.x, oldRot.y + deltaRotation, oldRot.z);\n    transform.position = oldPos;\n    if (queuedMoves.Count > 0)\n    {\n      movement = StartCoroutine(queuedMoves.Dequeue());\n    }\n    else\n    {\n      movement = null;\n    }\n  }\n\n  private IEnumerator ScaleTo(Vector3 target, float totalTime)\n  {\n    Vector3 oldScale = transform.localScale;\n    timer = 0;\n    while (timer < totalTime)\n    {\n      float t = timer / totalTime;\n      t = Ease.QuadInOut(0, 1, t);\n      transform.localScale = t * target + (1 - t) * oldScale;\n      yield return null;\n    }\n    transform.localScale = target;\n  }\n\n  private IEnumerator MoveTo(Vector3 deltaPos)\n  {\n    Vector3 oldRot = transform.eulerAngles;\n    Vector3 oldPos = transform.position;\n    Vector3 target = oldPos + transform.rotation * deltaPos;\n    timer = 0;\n    while (timer < moveTime)\n    {\n      timer += Time.deltaTime;\n      float t = timer / moveTime;\n      float bounce = Ease.QuadPop(0.0f, 2.0f, t);\n      if (moveType == MoveStyle.WADDLE)\n      {\n        if (t < 0.5f)\n        {\n          bounce = Ease.QuadPop(0.0f, 2.0f, t * 2);\n        }\n        else\n        {\n          bounce = Ease.QuadPop(0.0f, 2.0f, (t * 2) - 1);\n        }\n      }\n      if (bounce > 1)\n      {\n        bounce = 2 - bounce;\n      }\n      if (moveType == MoveStyle.WADDLE)\n      {\n        bounce *= 0.15f;\n      }\n      else if (moveType == MoveStyle.STALK)\n      {\n        bounce *= 0.3334f;\n      }\n      transform.position = Vector3.Lerp(oldPos, target, t) + bounce * Vector3.up;\n      if (moveType == MoveStyle.WADDLE)\n      {\n        transform.rotation = Quaternion.Euler(oldRot.x, oldRot.y, 15 * Mathf.Sin(2 * Mathf.PI * t));\n      }\n      else if (moveType == MoveStyle.STALK)\n      {\n        transform.rotation = Quaternion.Euler(20 * Mathf.Sin(2 * Mathf.PI * t), oldRot.y, oldRot.z);\n      }\n      yield return null;\n    }\n    transform.rotation = Quaternion.Euler(oldRot);\n    transform.position = target;\n    if (queuedMoves.Count > 0)\n    {\n      movement = StartCoroutine(queuedMoves.Dequeue());\n    }\n    else\n    {\n      movement = null;\n    }\n  }\n\n  public enum MoveStyle\n  {\n    WADDLE,\n    STALK\n  }\n\n}\n",
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/UnitMover.cs",
+			"file_size": 6890,
+			"file_write_time": 131170697523584995,
+			"settings":
+			{
+				"buffer_size": 6887,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Shaders/SpritesOverlay.shader",
+			"settings":
+			{
+				"buffer_size": 1927,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/TextMeshShadow.cs",
+			"settings":
+			{
+				"buffer_size": 641,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/SpecialStates.cs",
+			"settings":
+			{
+				"buffer_size": 159,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ScoreTracker.cs",
+			"settings":
+			{
+				"buffer_size": 1679,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/GameTile.cs",
+			"settings":
+			{
+				"buffer_size": 4992,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/MesopotamianGenerator.cs",
+			"settings":
+			{
+				"buffer_size": 1528,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/MesopotamianRandomizer.cs",
+			"settings":
+			{
+				"buffer_size": 708,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ModalDialog.cs",
+			"settings":
+			{
+				"buffer_size": 546,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ExitConfirm.cs",
+			"settings":
+			{
+				"buffer_size": 1143,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/DialogueManager.cs",
+			"settings":
+			{
+				"buffer_size": 975,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/QuitListener.cs",
+			"settings":
+			{
+				"buffer_size": 313,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/StatusReportDisplay.cs",
+			"settings":
+			{
+				"buffer_size": 2363,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/HighlightEffect.cs",
+			"settings":
+			{
+				"buffer_size": 5205,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/PitUpkeep.cs",
+			"settings":
+			{
+				"buffer_size": 437,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/RanchUpkeep.cs",
+			"settings":
+			{
+				"buffer_size": 384,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/HouseUpkeep.cs",
+			"settings":
+			{
+				"buffer_size": 358,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/TileGrid.cs",
+			"settings":
+			{
+				"buffer_size": 5838,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/GameEnding.cs",
+			"settings":
+			{
+				"buffer_size": 3859,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Input/CameraMover.cs",
+			"settings":
+			{
+				"buffer_size": 2515,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/BuildingPrice.cs",
+			"settings":
+			{
+				"buffer_size": 1459,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/RoundManager.cs",
+			"settings":
+			{
+				"buffer_size": 8531,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Shaders/3DText.shader",
+			"settings":
+			{
+				"buffer_size": 449,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/BuildMenu.cs",
+			"settings":
+			{
+				"buffer_size": 2449,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -299,7 +698,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 104.0,
+		"height": 395.0,
 		"last_filter": "install",
 		"selected_items":
 		[
@@ -308,7 +707,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 432.0
+		"width": 440.0
 	},
 	"console":
 	{
@@ -335,44 +734,53 @@
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Input",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Library",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders"
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World"
 	],
 	"file_history":
 	[
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/MesopotamianRandomizer.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/MesopotamianGenerator.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/RandomName.cs",
+		"/C/Users/ghold/Desktop/Sprites-Default.shader",
+		"/C/Users/ghold/Desktop/UI-Default.shader",
+		"/C/Users/ghold/Desktop/UI-DefaultFont.shader",
+		"/C/Users/ghold/Desktop/UI-Unlit-Text.shader",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/TileGrid.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/RoundManager.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/UnitMover.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/WorldInteraction.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/GameTile.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/BuildingPrice.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/BuildMenu.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders/OverSprite.shader",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/CostDisplay.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/Resources.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/HighlightEffect.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/WorkAnimation.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/MobSpawner.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/TimeOfDayPopper.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/MesopotamianRandomizer.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ShowForBuild.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/DayNightLight.cs",
+		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/RandomName.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ResourceCounter.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Input/CameraMover.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/WorkAnimation.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/VillagerPool.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/UnitMover.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/TileGrid.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/BuildingPrice.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/WorldInteraction.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/MaterialRandomizer.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Scriptable Objects/NameDatabase.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/StatusReportDisplay.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/SpecialStates.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/GameTile.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ContinueClicker.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/HighlightEffect.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/SpecialState.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders/Aura Overlay.shader",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ScreenRelative.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/CameraTestSpin.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/EnableOnStart.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/BuildMenu.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ScoreTracker.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/.gitignore",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Library/Ease.cs",
-		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/CostDisplay.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders/Aura Shader.shader",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/Aura.cs",
 		"/C/Users/ghold/Development/Unity/LudumDareThirtysix/Assets/Ludum Dare thirtysix/Shaders/Debug Half Blend.shader",
@@ -432,13 +840,15 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 45.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 115.0,
 		"where_history":
 		[
+			"",
+			"C:\\Users\\ghold\\Development\\Unity\\LudumDareThirtysix\\Assets\\Ludum Dare thirtysix\\Scripts"
 		]
 	},
 	"find_state":
@@ -446,6 +856,64 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"short",
+			"\"demo",
+			"pit",
+			"demo\"",
+			"Live",
+			"pers",
+			"shortci",
+			"short",
+			"cost",
+			"demo",
+			"BuildingComplete",
+			"SetTile",
+			"people",
+			"shortage",
+			"acti",
+			"shortag",
+			"shor",
+			"%",
+			"disablePathing",
+			"Upkeep",
+			"BuildingComplete",
+			"SetTile",
+			"Resources",
+			"TileG",
+			"Resources",
+			"\n    ",
+			"WorldGridIndex",
+			"GetPassable",
+			"GetTerr",
+			"debug.lo",
+			"Debug",
+			"PhaseTo",
+			"special",
+			"SetTile",
+			"seed =",
+			"debugScale",
+			"CostDi",
+			"SetTile",
+			"contains",
+			"selectionColor",
+			"special",
+			"cost",
+			"costs",
+			"wolfIndicator",
+			"indica",
+			"GetTiel",
+			"ScaleTo",
+			"Set",
+			"SetTe",
+			"SetTerr",
+			"\n        ",
+			"price",
+			"demo",
+			"activeTool",
+			"deltaTime",
+			"layer",
+			"^(.*)$",
+			"HighlightEffect",
 			"meatIcon",
 			"SetTile",
 			"WorldGridIndex",
@@ -507,7 +975,7 @@
 			"provideChunk",
 			"}"
 		],
-		"highlight": true,
+		"highlight": false,
 		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
@@ -523,14 +991,852 @@
 	"groups":
 	[
 		{
+			"selected": 22,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/MobSpawner.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								326,
+								326
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Mobs/UnitMover.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2684,
+								2684
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"307,318": "Convert to readonly",
+								"4819,4821": "Convert to '?:' expression",
+								"5747,5749": "Convert to '?:' expression",
+								"6686,6688": "Convert to '?:' expression"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 2859.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Ludum Dare thirtysix/Shaders/SpritesOverlay.shader",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1927,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/TextMeshShadow.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 641,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								628,
+								628
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"235,236": "Assignment is redundant"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/SpecialStates.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								92,
+								92
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ScoreTracker.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1679,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1373,
+								1373
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/GameTile.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4992,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4137,
+								4137
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"2675,2677": "Convert to '|=' expresssion",
+								"4670,4674": "Redundant 'else' keyword",
+								"4814,4819": "Parameter can be IEnumerable"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3693.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/MesopotamianGenerator.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								657,
+								657
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"1507,1520": "'MATERIAtamian' should start with a lower case letter. (Rule 'Fields')",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"304,318": "'MATERIAtamians' should start with a lower case letter. (Rule 'Fields')"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 588.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Utility/MesopotamianRandomizer.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								451,
+								451
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 109.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ModalDialog.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 546,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								376,
+								376
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"41,46": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 168.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/ExitConfirm.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								647,
+								647
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"357,359": "Convert to '?:' expression",
+								"41,46": "Using directive is not used by code and can be removed safely.",
+								"677,688": "'UnityEngine.Application.LoadLevel' is obsolete",
+								"711,722": "'UnityEngine.Application.loadedLevel' is obsolete"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 588.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/DialogueManager.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 975,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								271,
+								271
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"537,544": "Parameter can be IComparable",
+								"687,694": "Parameter can be IComparable",
+								"701,710": "Parameter can be IComparable"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/QuitListener.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 313,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								128,
+								128
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/StatusReportDisplay.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2363,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								669,
+								669
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"1340,1346": "Parameter can be IEnumerable",
+								"19,24": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/HighlightEffect.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4730,
+								4730
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3805.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/PitUpkeep.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								345,
+								356
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/RanchUpkeep.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 384,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								296,
+								363
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/HouseUpkeep.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								228,
+								228
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/TileGrid.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5838,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1677,
+								1691
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"1273,1277": "'UnityEngine.Random.seed' is obsolete",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"2271,2283": "Method 'HeightOffset' can be made static.",
+								"2313,2317": "'UnityEngine.Random.seed' is obsolete",
+								"5235,5240": "Using member of null value will cause a NullReferenceException",
+								"79,84": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 336.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/GameEnding.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3859,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3656,
+								3852
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"314,325": "The private field 'cameraStart' is never assigned"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3542.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Input/CameraMover.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								126,
+								126
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/Buildings/BuildingPrice.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								549,
+								549
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"587,591": "Parameter can be IComparable"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 333.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/World/RoundManager.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8531,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3232,
+								3232
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"2946,2949": "Variable could be moved to a nested scope",
+								"5603,5608": "Parameter can be IComparable",
+								"6021,6023": "Convert to '?:' expression"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3282.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "Assets/Ludum Dare thirtysix/Shaders/3DText.shader",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 449,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "Assets/Ludum Dare thirtysix/Scripts/Behaviors/UI/BuildMenu.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2449,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								887,
+								887
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"19,24": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 194.0,
+						"translation.y": 812.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 36.0
 	},
 	"input":
 	{
@@ -569,13 +1875,13 @@
 	},
 	"output.variable_get":
 	{
-		"height": 206.0
+		"height": 213.0
 	},
 	"pinned_build_system": "",
 	"project": "ludum_dare_36.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 68.0
 	},
 	"save_all_on_build": true,
 	"select_file":

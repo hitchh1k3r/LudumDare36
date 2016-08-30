@@ -5,6 +5,10 @@ using System.Collections.Generic;
 public class UnitMover : MonoBehaviour
 {
 
+  public static int moverCount;
+
+  public GameObject animalPit;
+
   public float moveTime = 1;
   public float turnTime = 0.5f;
   public MoveStyle moveType;
@@ -12,31 +16,137 @@ public class UnitMover : MonoBehaviour
   private Queue<IEnumerator> queuedMoves = new Queue<IEnumerator>();
   private Coroutine movement;
   private float timer;
+  private bool disablePathing;
+
+  void OnEnable()
+  {
+    ++moverCount;
+  }
+
+  void OnDisable()
+  {
+    --moverCount;
+  }
 
   void Update()
   {
-    if (queuedMoves.Count == 0)
+    if (!disablePathing && !ScoreTracker.instance.isSummaryShowing)
     {
-      MoveForward();
-      MoveForward();
-      MoveForward();
-      TurnLeft();
-    }
+      if (queuedMoves.Count == 0)
+      {
+        queuedMoves.Enqueue(Path());
+      }
 
-    if (movement == null && queuedMoves.Count > 0)
-    {
-      movement = StartCoroutine(queuedMoves.Dequeue());
+      if (movement == null && queuedMoves.Count > 0)
+      {
+        movement = StartCoroutine(queuedMoves.Dequeue());
+      }
     }
   }
 
-  public void MoveForward()
+  void RoundEnd()
   {
-    queuedMoves.Enqueue(MoveTo(1.0f * Vector3.forward));
+    StartCoroutine(Despawn());
   }
 
-  public void TurnLeft()
+  private IEnumerator Despawn()
   {
-    queuedMoves.Enqueue(TurnTo(-90));
+    disablePathing = true;
+    yield return movement;
+    yield return ScaleTo(Vector3.zero, 0.25f);
+    Destroy(gameObject);
+  }
+
+  private IEnumerator Path()
+  {
+    Vector3 block = transform.position + transform.forward;
+    Vector3 left = transform.position + 0.5f * transform.forward - 0.5f * transform.right;
+    Vector3 right = transform.position + 0.5f * transform.forward + 0.5f * transform.right;
+    int xLeft = Mathf.RoundToInt(left.x);
+    int yLeft = -Mathf.RoundToInt(left.z);
+    int xRight = Mathf.RoundToInt(right.x);
+    int yRight = -Mathf.RoundToInt(right.z);
+
+    if (block.x < -1 || block.z > 1 || block.x > TileGrid.instance.width || block.z < -TileGrid.instance.height)
+    {
+      StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
+      yield return StartCoroutine(MoveTo(Vector3.forward));
+      Destroy(gameObject);
+      yield break;
+    }
+
+    if (InteractWith(xLeft, yLeft))
+    {
+      disablePathing = true;
+      StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
+      yield return StartCoroutine(MoveTo(1 * Vector3.forward));
+      Destroy(gameObject);
+      yield break;
+    }
+    if (InteractWith(xRight, yRight))
+    {
+      disablePathing = true;
+      StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
+      yield return StartCoroutine(MoveTo(1 * Vector3.forward));
+      Destroy(gameObject);
+      yield break;
+    }
+
+    if (TileGrid.instance.GetPassable(xLeft, yLeft) || TileGrid.instance.GetPassable(xRight, yRight))
+    {
+      yield return MoveTo(1.0f * Vector3.forward);
+    }
+    else
+    {
+      yield return TurnTo(90 * ((Random.Range(0, 2) * 2) - 1));
+    }
+  }
+
+  private bool InteractWith(int x, int y)
+  {
+    GameObject go = TileGrid.instance.GetTile(x, y);
+    if (go != null)
+    {
+      BuildingPrice price = go.GetComponent<BuildingPrice>();
+      if (price.type == "pit")
+      {
+        TileGrid.instance.SetTile(x, y, animalPit);
+        return true;
+      }
+
+      GameTile tile = go.GetComponent<GameTile>();
+      if (moveType == MoveStyle.STALK)
+      {
+        if ((price.type == "baby_tree" || price.type == "baby_crop" || price.type == "crop") && !tile.working)
+        {
+          Destroy(go);
+          return true;
+        }
+      }
+      else if (moveType == MoveStyle.WADDLE)
+      {
+        if (tile.working && price.type == "fence")
+        {
+          MesopotamianRandomizer[] people = go.GetComponentsInChildren<MesopotamianRandomizer>();
+          foreach (MesopotamianRandomizer person in people)
+          {
+            person.doNotReleaseName = true;
+          }
+          ScoreTracker.instance.AddLost(Resources.Type.PERSON, people.Length);
+          Resources.instance.personLive -= people.Length;
+          tile.working = false;
+          foreach (SpecialStates child in go.GetComponentsInChildren<SpecialStates>(true))
+          {
+            if (child.activeOnWork)
+            {
+              child.gameObject.SetActive(false);
+            }
+          }
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   private IEnumerator TurnTo(float deltaRotation)
@@ -75,6 +185,20 @@ public class UnitMover : MonoBehaviour
     {
       movement = null;
     }
+  }
+
+  private IEnumerator ScaleTo(Vector3 target, float totalTime)
+  {
+    Vector3 oldScale = transform.localScale;
+    timer = 0;
+    while (timer < totalTime)
+    {
+      float t = timer / totalTime;
+      t = Ease.QuadInOut(0, 1, t);
+      transform.localScale = t * target + (1 - t) * oldScale;
+      yield return null;
+    }
+    transform.localScale = target;
   }
 
   private IEnumerator MoveTo(Vector3 deltaPos)

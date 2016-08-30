@@ -20,7 +20,8 @@ public class WorldInteraction : MonoBehaviour
   {
     GameObject hovering = null;
     RaycastHit hit;
-    if (!ScoreTracker.instance.isSummaryShowing && menuCamera.ScreenToWorldPoint(Input.mousePosition).x < menuLimiter.position.x && Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, terrainLayer))
+    bool buildStage = (RoundManager.instance.stage == RoundManager.RoundStage.DAWN || RoundManager.instance.stage == RoundManager.RoundStage.DUSK);
+    if (!ScoreTracker.instance.isSummaryShowing && buildStage && menuCamera.ScreenToWorldPoint(Input.mousePosition).x < menuLimiter.position.x && Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, terrainLayer))
     {
       hovering = hit.collider.gameObject;
     }
@@ -64,11 +65,11 @@ public class WorldInteraction : MonoBehaviour
       }
     }
 
-    if (!ScoreTracker.instance.isSummaryShowing && Input.GetButtonDown("Click") && currentPoint != null)
+    if (!ScoreTracker.instance.isSummaryShowing && buildStage && Input.GetButtonDown("Click") && currentPoint != null)
     {
       if (currentTile == null)
       {
-        if (BuildMenu.activeTool.isPlaceable)
+        if (BuildMenu.activeTool != null && BuildMenu.activeTool.isPlaceable && Resources.instance.TryBuy(BuildMenu.activeTool.buildCosts))
         {
           if (BuildMenu.activeTool.construction != null)
           {
@@ -88,6 +89,5 @@ public class WorldInteraction : MonoBehaviour
       }
     }
   }
-
 
 }

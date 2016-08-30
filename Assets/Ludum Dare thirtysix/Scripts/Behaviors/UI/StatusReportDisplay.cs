@@ -25,34 +25,41 @@ public class StatusReportDisplay : MonoBehaviour
   void OnEnable()
   {
     scoreTrackerReference.isSummaryShowing = true;
-    ClearScreenData();
     BuildScreenData();
+    ClearData();
   }
+
   void LateUpdate()
   {
-    if (Input.GetButton("Activate") || Input.GetButton("Cancel"))
+    if (Input.GetButtonUp("Activate") || Input.GetButtonUp("Cancel"))
     {
+      if (Resources.instance.personLive <= 0)
+      {
+        DialogueManager.Confirm("All of your villagers have died.\n\nWould you like to try again?", true);
+      }
+
       scoreTrackerReference.isSummaryShowing = false;
       gameObject.SetActive(false);
     }
   }
+
   void OnDisable()
   {
     scoreTrackerReference.isSummaryShowing = false;
   }
-  void ClearScreenData()
+
+  void ClearData()
   {
-    lostText.left.text = "";
-    lostText.right.text = "";
-    capturedText.left.text = "";
-    capturedText.right.text = "";
-    upkeepText.left.text = "";
-    upkeepText.right.text = "";
-    incomeText.left.text = "";
-    incomeText.right.text = "";
+    scoreTrackerReference.lost.Clear();
+    scoreTrackerReference.captured.Clear();
+    scoreTrackerReference.upkeep.Clear();
+    scoreTrackerReference.income.Clear();
   }
+
   void BuildEntry(List<ScoreTracker.ScoreEntry> seList, TwoColumnText display)
   {
+    display.left.text = "";
+    display.right.text = "";
     string colorModifier;
     int counter = 0;
     foreach (ScoreTracker.ScoreEntry entry in seList)
@@ -66,7 +73,7 @@ public class StatusReportDisplay : MonoBehaviour
       {
         colorModifier += "<color=#" + goodColor + ">+";
       }
-      if (counter % 2 == 0)
+      if (counter % 2 == 1)
       {
         display.right.text += colorModifier + entry.amount + "   " + Resources.GetName(entry.type) + "</color>\n";
       }
@@ -77,6 +84,7 @@ public class StatusReportDisplay : MonoBehaviour
       counter++;
     }
   }
+
   void BuildScreenData()
   {
     BuildEntry(scoreTrackerReference.lost, lostText);
@@ -84,4 +92,5 @@ public class StatusReportDisplay : MonoBehaviour
     BuildEntry(scoreTrackerReference.upkeep, upkeepText);
     BuildEntry(scoreTrackerReference.income, incomeText);
   }
+
 }
