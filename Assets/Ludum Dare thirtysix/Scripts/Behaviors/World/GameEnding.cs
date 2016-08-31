@@ -115,10 +115,10 @@ public class GameEnding : MonoBehaviour
     bool particlesOn = false;
     Vector3 basePosition = transform.position;
     timer = 0;
-    while (animating && timer < 18)
+    while (animating && timer < 15)
     {
       timer += Time.deltaTime;
-      float power = (timer * timer * timer * timer) / 1000.0f;
+      float power = (timer * timer * timer * timer) / 1500.0f;
       if (power > 1 && !particlesOn)
       {
         particlesOn = true;
@@ -127,7 +127,7 @@ public class GameEnding : MonoBehaviour
           go.SetActive(true);
         }
       }
-      transform.rotation = Quaternion.Euler(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
+      transform.rotation = Quaternion.Euler(Random.Range(-2.0f, 2.0f), 0, Random.Range(-2.0f, 2.0f));
       transform.position = basePosition + power * Vector3.up;
       yield return null;
     }
@@ -137,6 +137,12 @@ public class GameEnding : MonoBehaviour
     trackingSpeed = 3;
     cameraPos = transform.position + 3 * Vector3.down;
     DialogueManager.Confirm("<size=40>Ancient Akkadians</size>\n<size=25><color=#888>A game for Ludum Dare 36\nby HitchH1k3r, Solifuge, and Naali</color>\n\nThank you for playing!</size>", true);
+
+    while (animating)
+    {
+      transform.rotation = Quaternion.Euler(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
+      yield return null;
+    }
   }
 
 }

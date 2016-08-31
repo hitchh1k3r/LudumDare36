@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -125,7 +125,7 @@ public class UnitMover : MonoBehaviour
       }
       else if (moveType == MoveStyle.WADDLE)
       {
-        if (tile.working && price.type == "fence")
+        if (tile.working && price.type != "fence")
         {
           MesopotamianRandomizer[] people = go.GetComponentsInChildren<MesopotamianRandomizer>();
           foreach (MesopotamianRandomizer person in people)
