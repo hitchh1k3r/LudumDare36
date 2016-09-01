@@ -12,6 +12,7 @@ public class UnitMover : MonoBehaviour
   public float moveTime = 1;
   public float turnTime = 0.5f;
   public MoveStyle moveType;
+  public AudioClip attackSound;
 
   private Queue<IEnumerator> queuedMoves = new Queue<IEnumerator>();
   private Coroutine movement;
@@ -119,6 +120,7 @@ public class UnitMover : MonoBehaviour
       {
         if ((price.type == "baby_tree" || price.type == "baby_crop" || price.type == "crop") && !tile.working)
         {
+          SoundEffects.PlaySound(attackSound);
           Destroy(go);
           return true;
         }
@@ -127,6 +129,7 @@ public class UnitMover : MonoBehaviour
       {
         if (tile.working && price.type != "fence")
         {
+          SoundEffects.PlaySound(attackSound);
           MesopotamianRandomizer[] people = go.GetComponentsInChildren<MesopotamianRandomizer>();
           foreach (MesopotamianRandomizer person in people)
           {

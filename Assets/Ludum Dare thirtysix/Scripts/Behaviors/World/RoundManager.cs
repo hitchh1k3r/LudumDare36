@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RoundManager : MonoBehaviour
 {
 
+  public static List<IStageListener> stateListners = new List<IStageListener>();
   public static RoundManager instance;
 
   public float buildTime = 90;
@@ -34,6 +36,7 @@ public class RoundManager : MonoBehaviour
   private Color dayColor;
   private Color nightColor;
   private bool init;
+  private bool shortCircuit;
 
   void OnEnable()
   {
@@ -42,8 +45,7 @@ public class RoundManager : MonoBehaviour
     timeLeft = buildTime * 2;
     dayColor = dayPallet[3];
     nightColor = nightPallet[3];
-    eulers = new Vector3(0, 0, 0);
-    lightContainer.rotation = Quaternion.Euler(eulers);
+    eulers = lightContainer.eulerAngles;
     StartCoroutine(PhaseTo(90, dayPallet[0], nightPallet[0]));
 
     dayLight.color = dayColor;
@@ -61,7 +63,7 @@ public class RoundManager : MonoBehaviour
 
     if (!ScoreTracker.instance.isSummaryShowing)
     {
-      bool shortCircuit;
+      shortCircuit = false;
       if (stage == RoundStage.DAWN || stage == RoundStage.DUSK)
       {
         shortCircuit = (Resources.instance.person == 0 || Input.GetButton("Activate"));
@@ -106,6 +108,10 @@ public class RoundManager : MonoBehaviour
               p = 0;
             }
             break;
+        }
+        foreach (IStageListener listner in stateListners)
+        {
+          listner.ChangeStage(stage);
         }
         if (build)
         {
@@ -257,7 +263,7 @@ public class RoundManager : MonoBehaviour
       float t = 1 - (timeLeft / time);
       float x = Ease.QuadInOut(eulers.x, targetX, t);
       float mix = Ease.QuadInOut(0, 1, t);
-      lightContainer.rotation = Quaternion.Euler(x, eulers.y, eulers.z);
+      lightContainer.localRotation = Quaternion.Euler(x, eulers.y, eulers.z);
       if (x > 160 && x < 200)
       {
         dayLight.shadowStrength = ((200 - x) * 0.025f);
@@ -288,9 +294,29 @@ public class RoundManager : MonoBehaviour
     eulers = new Vector3(targetX, eulers.y, eulers.z);
     dayColor = targetDayColor;
     nightColor = targetNightColor;
-    lightContainer.rotation = Quaternion.Euler(eulers);
+    lightContainer.localRotation = Quaternion.Euler(eulers);
     dayLight.color = dayColor;
     nightLight.color = nightColor;
+  }
+
+  public RoundStage GetFutureStage(float lookAhead)
+  {
+    if (timeLeft < lookAhead * (shortCircuit ? 10 : 1))
+    {
+      switch (stage)
+      {
+        case RoundStage.DAWN:
+          return RoundStage.DAY;
+        case RoundStage.DAY:
+          return RoundStage.DUSK;
+        case RoundStage.DUSK:
+          return RoundStage.NIGHT;
+        case RoundStage.NIGHT:
+          return RoundStage.DAWN;
+      }
+    }
+
+    return stage;
   }
 
   public enum RoundStage
