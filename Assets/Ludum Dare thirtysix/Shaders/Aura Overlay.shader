@@ -39,7 +39,7 @@
           o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
           o.uv = v.uv;
 
-          float blurSize = 0.4;
+          float blurSize = 0.3;
 
           o.vtf0_1   = float4(o.uv + blurSize * float2(-0.028, 0.0), o.uv + blurSize * float2(-0.024, 0.0));
 			    o.vtf2_3   = float4(o.uv + blurSize * float2(-0.020, 0.0), o.uv + blurSize * float2(-0.016, 0.0));
@@ -115,7 +115,7 @@
           o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
           o.uv = v.uv;
 
-          float blurSize = 0.4;
+          float blurSize = 0.3;
 
           o.vtf0_1   = float4(o.uv + blurSize * float2(0.0, -0.028), o.uv + blurSize * float2(0.0, -0.024));
 			    o.vtf2_3   = float4(o.uv + blurSize * float2(0.0, -0.020), o.uv + blurSize * float2(0.0, -0.016));

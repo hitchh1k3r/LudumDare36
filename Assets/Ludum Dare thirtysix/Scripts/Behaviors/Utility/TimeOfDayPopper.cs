@@ -6,6 +6,8 @@ public class TimeOfDayPopper : MonoBehaviour
 
   public bool dayTimeEntity;
 
+  public static Material overrideMaterial;
+
   private bool popped;
 
   void Update()
@@ -15,6 +17,11 @@ public class TimeOfDayPopper : MonoBehaviour
       transform.localScale = Vector3.zero;
       if (dayTimeEntity == (RoundManager.instance.stage == RoundManager.RoundStage.DAWN || RoundManager.instance.stage == RoundManager.RoundStage.DAY))
       {
+        if (overrideMaterial != null)
+        {
+          GetComponentInChildren<MeshRenderer>().sharedMaterial = overrideMaterial;
+          overrideMaterial = null;
+        }
         StartCoroutine(Pop(0.5f));
         popped = true;
       }

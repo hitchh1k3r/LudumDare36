@@ -2,7 +2,7 @@
 {
   Properties {
     _MainTex ("Font Texture", 2D) = "white" {}
-    _Color ("Text Color", Color) = (1,1,1,1)
+    _Color ("Tint", Color) = (1,1,1,1)
   }
 
   SubShader {

@@ -6,6 +6,8 @@ public class CameraMover : MonoBehaviour
 
   public static CameraMover instance;
 
+  public GameObject stars;
+
   public TileGrid tiles;
   public Transform camera;
   public float spinTime = 0.5f;

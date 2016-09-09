@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class WorldInteraction : MonoBehaviour
 {
+
+  public static WorldInteraction instance;
 
   public TileGrid world;
   public Camera camera;
@@ -11,10 +13,16 @@ public class WorldInteraction : MonoBehaviour
   public LayerMask terrainLayer;
   public Color blockHoverColor;
   public GameObject house;
+  public AudioClip buildSound;
 
   private GameObject currentHover = null;
   private GameObject currentTile = null;
   private TileGrid.Point currentPoint;
+
+  void OnEnable()
+  {
+    instance = this;
+  }
 
   void Update()
   {
@@ -34,6 +42,13 @@ public class WorldInteraction : MonoBehaviour
         if (currentTile != null)
         {
           HighlightEffect.RemoveHighlight(currentTile);
+
+          BuildingPrice price = currentTile.GetComponent<BuildingPrice>();
+          CostDisplay display = currentTile.GetComponentInChildren<CostDisplay>(true);
+          if (price != null && display != null && !price.alwaysShowCost)
+          {
+            display.gameObject.SetActive(false);
+          }
         }
         else
         {
@@ -55,6 +70,13 @@ public class WorldInteraction : MonoBehaviour
           {
             HighlightEffect.AddHighlight(tile, blockHoverColor);
             currentTile = tile;
+
+            BuildingPrice price = currentTile.GetComponent<BuildingPrice>();
+            CostDisplay display = currentTile.GetComponentInChildren<CostDisplay>(true);
+            if (price != null && display != null && !price.alwaysShowCost)
+            {
+              display.gameObject.SetActive(true);
+            }
           }
           else
           {
@@ -81,6 +103,8 @@ public class WorldInteraction : MonoBehaviour
           }
           HighlightEffect.RemoveHighlight(currentHover);
           currentHover = null;
+          world.GetTile(currentPoint.x, currentPoint.y).GetComponent<GameTile>().audio.PlayOneShot(buildSound);
+          SoundEffects.PlaySound(buildSound);
         }
       }
       else

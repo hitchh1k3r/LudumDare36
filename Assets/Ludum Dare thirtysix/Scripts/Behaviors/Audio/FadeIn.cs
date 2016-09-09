@@ -11,7 +11,7 @@ public class FadeIn : MonoBehaviour
   private float targetVolume;
   private float timer;
 
-  void Awake()
+  void OnEnable()
   {
     audio = GetComponent<AudioSource>();
     targetVolume = audio.volume;

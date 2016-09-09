@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class UnitMover : MonoBehaviour
 {
 
@@ -12,16 +13,24 @@ public class UnitMover : MonoBehaviour
   public float moveTime = 1;
   public float turnTime = 0.5f;
   public MoveStyle moveType;
+  public AudioClip fallSound;
   public AudioClip attackSound;
+  public AudioClip[] stepSounds;
 
+  private AudioSource audio;
   private Queue<IEnumerator> queuedMoves = new Queue<IEnumerator>();
   private Coroutine movement;
   private float timer;
   private bool disablePathing;
 
+  private float fall_volume = 1;
+  private float attack_volume = 1;
+  private float step_volume = 1;
+
   void OnEnable()
   {
     ++moverCount;
+    audio = GetComponent<AudioSource>();
   }
 
   void OnDisable()
@@ -111,6 +120,8 @@ public class UnitMover : MonoBehaviour
       BuildingPrice price = go.GetComponent<BuildingPrice>();
       if (price.type == "pit")
       {
+        audio.PlayOneShot(fallSound, fall_volume);
+        TimeOfDayPopper.overrideMaterial = GetComponentInChildren<MeshRenderer>().sharedMaterial;
         TileGrid.instance.SetTile(x, y, animalPit);
         return true;
       }
@@ -120,7 +131,7 @@ public class UnitMover : MonoBehaviour
       {
         if ((price.type == "baby_tree" || price.type == "baby_crop" || price.type == "crop") && !tile.working)
         {
-          SoundEffects.PlaySound(attackSound);
+          audio.PlayOneShot(attackSound, attack_volume);
           Destroy(go);
           return true;
         }
@@ -129,7 +140,7 @@ public class UnitMover : MonoBehaviour
       {
         if (tile.working && price.type != "fence")
         {
-          SoundEffects.PlaySound(attackSound);
+          audio.PlayOneShot(attackSound, attack_volume);
           MesopotamianRandomizer[] people = go.GetComponentsInChildren<MesopotamianRandomizer>();
           foreach (MesopotamianRandomizer person in people)
           {
@@ -206,6 +217,7 @@ public class UnitMover : MonoBehaviour
 
   private IEnumerator MoveTo(Vector3 deltaPos)
   {
+    audio.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Length)], step_volume);
     Vector3 oldRot = transform.eulerAngles;
     Vector3 oldPos = transform.position;
     Vector3 target = oldPos + transform.rotation * deltaPos;

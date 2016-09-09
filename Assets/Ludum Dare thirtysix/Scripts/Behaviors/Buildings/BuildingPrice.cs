@@ -5,6 +5,7 @@ public class BuildingPrice : MonoBehaviour
 {
 
   public string type;
+  public bool alwaysShowCost;
   public bool isPlaceable;
   public float heightOffset = 1;
   public bool hidesTerrain;
@@ -13,6 +14,8 @@ public class BuildingPrice : MonoBehaviour
   public Cost[] buildCosts;
   public Cost[] workCosts;
   public Color selectionColor = new Color(0, 1, 1);
+  [TextArea]
+  public string tooltipName, tooltipCosts, tooltipDescription;
 
   [System.NonSerialized]
   public GameObject prefab;
@@ -39,6 +42,22 @@ public class BuildingPrice : MonoBehaviour
         render.enabled = true;
       }
       HighlightEffect.RemoveHighlight(gameObject);
+    }
+  }
+
+  void OnMouseEnter()
+  {
+    if (enabled && requirement == "" && !ScoreTracker.instance.isSummaryShowing)
+    {
+      DialogueManager.Tooltip(tooltipName, tooltipDescription, tooltipCosts);
+    }
+  }
+
+  void OnMouseExit()
+  {
+    if (enabled && requirement == "" && !ScoreTracker.instance.isSummaryShowing)
+    {
+      DialogueManager.HideTooltip();
     }
   }
 

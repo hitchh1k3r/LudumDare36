@@ -43,7 +43,7 @@ public class HighlightEffect : MonoBehaviour
               if (filter != null)
               {
                 SpecialStates state = renderer.GetComponent<SpecialStates>();
-                if (state == null || force || !state.hideFromHighlighter)
+                if (force || (renderer.enabled && (state == null || !state.hideFromHighlighter)))
                 {
                   MeshRenderer nr = new GameObject().AddComponent<MeshRenderer>();
                   nr.transform.SetParent(renderer.transform);
@@ -135,27 +135,53 @@ public class HighlightEffect : MonoBehaviour
     }
   }
 
+  private RenderTexture buffer1, buffer2;
+  private int buffWidth, buffHeight;
+
   void OnRenderImage(RenderTexture src, RenderTexture dest)
   {
-    RenderTexture temp1 = new RenderTexture(src.width, src.height, 0, RenderTextureFormat.ARGB32);
-    RenderTexture temp2 = new RenderTexture(src.width, src.height, 0, RenderTextureFormat.ARGB32);
+    if (buffWidth != src.width || buffHeight != src.height)
+    {
+      if (buffer1 != null)
+      {
+        DestroyImmediate(buffer1);
+      }
+      if (buffer2 != null)
+      {
+        DestroyImmediate(buffer2);
+      }
 
-    temp1.DiscardContents();
-    temp2.DiscardContents();
+      buffWidth = src.width;
+      buffHeight = src.height;
+      buffer1 = new RenderTexture(buffWidth, buffHeight, 0, RenderTextureFormat.ARGB32);
+      buffer2 = new RenderTexture(buffWidth, buffHeight, 0, RenderTextureFormat.ARGB32);
+    }
+
+    if (cam.clearFlags == CameraClearFlags.Depth || cam.clearFlags == CameraClearFlags.Nothing)
+    {
+      RenderTexture rt = RenderTexture.active;
+      RenderTexture.active = buffer1;
+      GL.Clear(false, true, Color.clear);
+      RenderTexture.active = buffer2;
+      GL.Clear(false, true, Color.clear);
+      RenderTexture.active = rt;
+    }
 
     highlightCam.CopyFrom(cam);
     highlightCam.cullingMask = highlightMask;
-    highlightCam.targetTexture = temp1;
+    highlightCam.targetTexture = buffer1;
     highlightCam.depthTextureMode = DepthTextureMode.None;
     highlightCam.renderingPath = RenderingPath.Forward;
     highlightCam.RenderWithShader(aura.shader, null);
 
-    Graphics.Blit(temp1, temp2, overlay, 0);
-    Graphics.Blit(src, dest);
-    Graphics.Blit(temp2, dest, overlay, 1);
+    Graphics.Blit(buffer1, buffer2, overlay, 0);
 
-    DestroyImmediate(temp1);
-    DestroyImmediate(temp2);
+    buffer1.DiscardContents();
+
+    Graphics.Blit(src, dest);
+    Graphics.Blit(buffer2, dest, overlay, 1);
+
+    buffer2.DiscardContents();
   }
 
 }

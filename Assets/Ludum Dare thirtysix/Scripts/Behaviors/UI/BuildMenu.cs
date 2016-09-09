@@ -44,6 +44,13 @@ public class BuildMenu : MonoBehaviour
     {
       trans.gameObject.layer = gameObject.layer;
     }
+    foreach (SpecialStates states in menuItem.GetComponentsInChildren<SpecialStates>())
+    {
+      if (states.hideInMenu)
+      {
+        Destroy(states.gameObject);
+      }
+    }
 
     BuildingPrice price = menuItem.GetComponent<BuildingPrice>();
     if (price != null)
@@ -79,7 +86,7 @@ public class BuildMenu : MonoBehaviour
         {
           render.enabled = false;
         }
-        HighlightEffect.AddHighlight(menuItem.gameObject, new Color(1, 1, 1));
+        HighlightEffect.AddHighlight(menuItem.gameObject, new Color(1, 1, 1), true);
       }
     }
 

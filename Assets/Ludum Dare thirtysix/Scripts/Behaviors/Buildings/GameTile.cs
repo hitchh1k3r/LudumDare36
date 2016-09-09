@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameTile : MonoBehaviour
 {
 
@@ -8,9 +9,12 @@ public class GameTile : MonoBehaviour
   public bool canDemolish;
   public bool changeOnWork;
   public GameObject workState;
+  public ConstructionStates construction;
   public BuildingPrice.Cost[] demolishRefund;
   public BuildingPrice.Cost[] workGain;
   public BuildingPrice.Cost[] maxIncreses;
+  public AudioClip[] workerPlaceSounds;
+  public AudioClip[] workerRemoveSounds;
 
   [System.NonSerialized]
   public bool working;
@@ -19,13 +23,17 @@ public class GameTile : MonoBehaviour
 
   [System.NonSerialized]
   public int x, y;
+  [System.NonSerialized]
+  public AudioSource audio;
   private bool isFirstTurn;
 
   void OnEnable()
   {
+    audio = GetComponent<AudioSource>();
     isFirstTurn = true;
     if (firstTurnWork && TileGrid.instance.worldGenerated)
     {
+      audio.PlayOneShot(workerPlaceSounds[Random.Range(0, workerPlaceSounds.Length)]);
       working = true;
       foreach (SpecialStates child in GetComponentsInChildren<SpecialStates>(true))
       {
@@ -48,6 +56,11 @@ public class GameTile : MonoBehaviour
       display.costs[q].sprite.sprite = Resources.instance.GetIcon(cost.type);
       display.costs[q].text.text = cost.amount.ToString();
       ++q;
+    }
+
+    if (!price.alwaysShowCost)
+    {
+      display.gameObject.SetActive(false);
     }
 
     foreach (BuildingPrice.Cost max in maxIncreses)
@@ -89,7 +102,12 @@ public class GameTile : MonoBehaviour
           price.workCosts[i] = cost;
           // FIXME (hitch) this is a horrible hack to update time display, IRL lookup what field we are
           // updating!
-          GetComponentInChildren<CostDisplay>().costs[0].text.text = cost.amount.ToString();
+          GetComponentInChildren<CostDisplay>(true).costs[0].text.text = cost.amount.ToString();
+          if (construction != null)
+          {
+            construction.transform.localPosition += construction.deltaPos;
+            construction.transform.localScale += construction.deltaScale;
+          }
         }
         if (cost.amount <= 0)
         {
@@ -125,6 +143,11 @@ public class GameTile : MonoBehaviour
           if (!working)
           {
             Resources.instance.AddResources(workCosts);
+            audio.PlayOneShot(workerRemoveSounds[Random.Range(0, workerRemoveSounds.Length)]);
+          }
+          else
+          {
+            audio.PlayOneShot(workerPlaceSounds[Random.Range(0, workerPlaceSounds.Length)]);
           }
           foreach (SpecialStates child in GetComponentsInChildren<SpecialStates>(true))
           {
@@ -133,6 +156,7 @@ public class GameTile : MonoBehaviour
               child.gameObject.SetActive(working);
             }
           }
+          gameObject.BroadcastMessage("WorkingToggle", SendMessageOptions.DontRequireReceiver);
           Color highlightColor = HighlightEffect.GetColor(gameObject);
           if (highlightColor != Color.black)
           {
@@ -157,6 +181,7 @@ public class GameTile : MonoBehaviour
               ++Resources.instance.person;
             }
           }
+          SoundEffects.PlaySound(WorldInteraction.instance.buildSound, 0.9f);
         }
         else
         {

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +11,9 @@ public class RoundManager : MonoBehaviour
 
   public float buildTime = 90;
   public float mobTime = 30;
+  public AudioSource[] endingMute;
+  public AudioSource endMusic, endAlarm, endRumble, endHumm;
+  public AudioClip engineIgnite;
 
   public RoundStage stage = RoundStage.DAWN;
   public Text dayText;
@@ -37,6 +40,7 @@ public class RoundManager : MonoBehaviour
   private Color nightColor;
   private bool init;
   private bool shortCircuit;
+  private int[][] indicatorSpots = new int[4][];
 
   void OnEnable()
   {
@@ -57,6 +61,10 @@ public class RoundManager : MonoBehaviour
     if (!init)
     {
       init = true;
+      indicatorSpots[0] = new int[TileGrid.instance.width];
+      indicatorSpots[1] = new int[TileGrid.instance.height];
+      indicatorSpots[2] = new int[TileGrid.instance.width];
+      indicatorSpots[3] = new int[TileGrid.instance.height];
       AddIndicators(true);
       AddIndicators(false);
     }
@@ -131,8 +139,8 @@ public class RoundManager : MonoBehaviour
             peopleToFeed = 0;
           }
 
-          TileGrid.instance.BroadcastMessage("Upkeep", SendMessageOptions.DontRequireReceiver);
           entityContainer.BroadcastMessage("RoundEnd", SendMessageOptions.DontRequireReceiver);
+          TileGrid.instance.BroadcastMessage("Upkeep", SendMessageOptions.DontRequireReceiver);
           AddIndicators(stage == RoundStage.DAWN);
 
           if (foodShortage > 0)
@@ -197,7 +205,18 @@ public class RoundManager : MonoBehaviour
 
   private void AddIndicators(bool isDay)
   {
+    for (int i = 0; i < 4; ++i)
+    {
+      for (int p = 0; p < indicatorSpots[i].Length; ++p)
+      {
+        if (indicatorSpots[i][p] == (isDay ? 1 : 2))
+        {
+          indicatorSpots[i][p] = 0;
+        }
+      }
+    }
     GameObject indicator;
+    Random.seed = System.Environment.TickCount;
     int count = Random.Range(Mathf.Max(dayCounter - 5, 1), dayCounter);
     if (isDay)
     {
@@ -214,41 +233,51 @@ public class RoundManager : MonoBehaviour
     }
     for (int i = 0; i < count; ++i)
     {
-      int side = Random.Range(0, 4);
-      int pos;
-      if (side % 2 == 0)
+      int side = -1;
+      int pos = -1;
+      int loopBreak = 0;
+      while (loopBreak < 100 && (side < 0 || pos < 0 || indicatorSpots[side][pos] != 0))
       {
-        pos = Random.Range(0, TileGrid.instance.width - 1);
+        ++loopBreak;
+        side = Random.Range(0, 4);
+        if (side % 2 == 0)
+        {
+          pos = Random.Range(0, TileGrid.instance.width - 1);
+        }
+        else
+        {
+          pos = Random.Range(0, TileGrid.instance.height - 1);
+        }
       }
-      else
+      if (loopBreak < 100)
       {
-        pos = Random.Range(0, TileGrid.instance.height - 1);
-      }
-      Transform indTran = Instantiate(indicator).transform;
-      indTran.SetParent(indicatorContainer.transform);
-      indTran.localRotation = Quaternion.Euler(0, 90 * side, 0);
-      switch (side)
-      {
-        case 1:
-          {
-            indTran.localPosition = new Vector3(0, 0, -pos - 0.5f);
-          }
-          break;
-        case 0:
-          {
-            indTran.localPosition = new Vector3(pos + 0.5f, 0, -TileGrid.instance.height + 1);
-          }
-          break;
-        case 3:
-          {
-            indTran.localPosition = new Vector3(TileGrid.instance.width - 1, 0, -pos - 0.5f);
-          }
-          break;
-        case 2:
-          {
-            indTran.localPosition = new Vector3(pos + 0.5f, 0, 0);
-          }
-          break;
+        indicatorSpots[side][pos] = (isDay ? 1 : 2);
+        Transform indTran = Instantiate(indicator).transform;
+        indTran.SetParent(indicatorContainer.transform);
+        indTran.localRotation = Quaternion.Euler(0, 90 * side, 0);
+        switch (side)
+        {
+          case 1:
+            {
+              indTran.localPosition = new Vector3(0, 0, -pos - 0.5f);
+            }
+            break;
+          case 0:
+            {
+              indTran.localPosition = new Vector3(pos + 0.5f, 0, -TileGrid.instance.height + 1);
+            }
+            break;
+          case 3:
+            {
+              indTran.localPosition = new Vector3(TileGrid.instance.width - 1, 0, -pos - 0.5f);
+            }
+            break;
+          case 2:
+            {
+              indTran.localPosition = new Vector3(pos + 0.5f, 0, 0);
+            }
+            break;
+        }
       }
     }
   }

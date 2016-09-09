@@ -8,7 +8,7 @@ public class HouseUpkeep : MonoBehaviour
   {
     if (Resources.instance.personLive < Resources.instance.personMax)
     {
-      if (Random.Range(0, 5) == 0)
+      if (Random.Range(0, 3) == 0)
       {
         ++Resources.instance.personLive;
         ScoreTracker.instance.AddIncome(Resources.Type.PERSON, 1);

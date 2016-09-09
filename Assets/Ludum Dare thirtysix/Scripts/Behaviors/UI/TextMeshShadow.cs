@@ -17,6 +17,7 @@ public class TextMeshShadow : MonoBehaviour
       Transform newText = Instantiate(gameObject).transform;
       Destroy(newText.GetComponent<TextMeshShadow>());
       newText.GetComponent<TextMesh>().color = Color.black;
+      newText.GetComponent<TextMesh>().text = source.text;
       newText.SetParent(transform);
       newText.localPosition = new Vector3(0.2f, -0.2f, 0.1f);
       newText.localRotation = Quaternion.identity;
