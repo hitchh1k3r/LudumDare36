@@ -67,6 +67,7 @@ public class TileGrid : MonoBehaviour
           y = Random.Range(0, height);
         }
         SetTile(x, y, tile.tile);
+        GetTile(x, y).GetComponent<GameTile>().isFirstTurn = false;
       }
     }
     worldGenerated = true;

@@ -108,6 +108,18 @@ public class Resources : MonoBehaviour
           if (max)
           {
             personMax = value;
+            if (personLive > personMax)
+            {
+              person -= personLive - personMax;
+              if (person < 0)
+              {
+                // TODO (hitch) ideally this would remove a worker... but as you could maybe over work
+                // people by increasing person over personLive (for a turn before it resyncs)
+                person = 0;
+              }
+              ScoreTracker.instance.LostVillager(personLive - personMax, MesopotamianGenerator.instance.RemoveFromPool(personLive - personMax), true);
+              personLive = personMax;
+            }
           }
           else
           {
@@ -120,6 +132,11 @@ public class Resources : MonoBehaviour
           if (max)
           {
             animalMax = value;
+            if (animal > animalMax)
+            {
+              ScoreTracker.instance.AddLoss(type, animalMax - animal);
+              animal = animalMax;
+            }
           }
           else
           {
@@ -132,6 +149,11 @@ public class Resources : MonoBehaviour
           if (max)
           {
             woodMax = value;
+            if (wood > woodMax)
+            {
+              ScoreTracker.instance.AddLoss(type, woodMax - wood);
+              wood = woodMax;
+            }
           }
           else
           {
@@ -144,6 +166,11 @@ public class Resources : MonoBehaviour
           if (max)
           {
             stoneMax = value;
+            if (stone > stoneMax)
+            {
+              ScoreTracker.instance.AddLoss(type, stoneMax - stone);
+              stone = stoneMax;
+            }
           }
           else
           {
@@ -156,6 +183,11 @@ public class Resources : MonoBehaviour
           if (max)
           {
             foodMax = value;
+            if (food > foodMax)
+            {
+              ScoreTracker.instance.AddLoss(type, foodMax - food);
+              food = foodMax;
+            }
           }
           else
           {

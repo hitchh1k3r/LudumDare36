@@ -5,6 +5,7 @@ public class MesopotamianRandomizer : MonoBehaviour
 {
 
   public bool doNotReleaseName;
+  public string mesopoNAMEian;
   public TextMesh text, shadow;
   public Renderer renderer;
 
@@ -14,10 +15,11 @@ public class MesopotamianRandomizer : MonoBehaviour
   {
     doNotReleaseName = false;
     mesopotamian = MesopotamianGenerator.instance.GetMesopotamian();
-    text.text = mesopotamian.mesopoNAMEian;
+    mesopoNAMEian = mesopotamian.mesopoNAMEian;
+    text.text = mesopoNAMEian;
     if (shadow != null)
     {
-      shadow.text = mesopotamian.mesopoNAMEian;
+      shadow.text = mesopoNAMEian;
     }
 
     renderer.sharedMaterial = mesopotamian.MATERIAtamian;

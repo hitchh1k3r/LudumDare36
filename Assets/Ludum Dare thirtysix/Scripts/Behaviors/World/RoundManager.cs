@@ -78,7 +78,7 @@ public class RoundManager : MonoBehaviour
       }
       else
       {
-        shortCircuit = (UnitMover.moverCount == 0);
+        shortCircuit = (UnitMover.moverCount == 0 && timeLeft < (mobTime - 3));
       }
       timeLeft -= Time.deltaTime * debugScale * (shortCircuit ? ((timeLeft / 2) + 5) : 1);
       if (timeLeft < 0)
@@ -124,57 +124,34 @@ public class RoundManager : MonoBehaviour
         if (build)
         {
           timeLeft = buildTime;
-          int peopleToFeedInit = Resources.instance.personLive;
-          int peopleToFeed = Resources.instance.personLive;
-          int foodSpent = Resources.instance.food;
-          int foodShortage = peopleToFeed - Resources.instance.food;
-          if (foodShortage > 0)
-          {
-            peopleToFeed -= Resources.instance.food;
-            Resources.instance.food = 0;
-          }
-          else
-          {
-            Resources.instance.food -= peopleToFeed;
-            peopleToFeed = 0;
-          }
+
+          Resources.instance.foodMax += 999999;
 
           entityContainer.BroadcastMessage("RoundEnd", SendMessageOptions.DontRequireReceiver);
           TileGrid.instance.BroadcastMessage("Upkeep", SendMessageOptions.DontRequireReceiver);
           AddIndicators(stage == RoundStage.DAWN);
 
+          int foodShortage = Resources.instance.personLive - Resources.instance.food;
           if (foodShortage > 0)
           {
-            foodSpent += Resources.instance.food;
-            if (foodShortage - Resources.instance.food > 0)
-            {
-              foodShortage -= Resources.instance.food;
-              int peepsLost = Mathf.CeilToInt(foodShortage / 2.0f);
-              ScoreTracker.instance.AddLost(Resources.Type.PERSON, peepsLost);
-              if (foodSpent != 0)
-              {
-                ScoreTracker.instance.AddUpkeep(Resources.Type.FOOD, foodSpent);
-              }
-              Resources.instance.personLive -= peepsLost;
-              MesopotamianGenerator.instance.RemoveFromPool(peepsLost);
-              Resources.instance.food = 0;
-            }
-            else
-            {
-              Resources.instance.food -= foodShortage;
-              if (Resources.instance.personLive != 0)
-              {
-                ScoreTracker.instance.AddUpkeep(Resources.Type.FOOD, peopleToFeedInit);
-              }
-            }
+            ScoreTracker.instance.AddExpenses(Resources.Type.FOOD, Resources.instance.food);
+            int peepsLost = Mathf.CeilToInt(foodShortage / 2.0f);
+            ScoreTracker.instance.LostVillager(peepsLost, MesopotamianGenerator.instance.RemoveFromPool(peepsLost));
+            Resources.instance.personLive -= peepsLost;
+            Resources.instance.food = 0;
           }
           else
           {
-            Resources.instance.food -= peopleToFeed;
-            if (Resources.instance.personLive != 0)
-            {
-              ScoreTracker.instance.AddUpkeep(Resources.Type.FOOD, peopleToFeedInit);
-            }
+            ScoreTracker.instance.AddExpenses(Resources.Type.FOOD, Resources.instance.personLive);
+            Resources.instance.food -= Resources.instance.personLive;
+          }
+
+          Resources.instance.foodMax -= 999999;
+          if (Resources.instance.food > Resources.instance.foodMax)
+          {
+            ScoreTracker.instance.AddLoss(Resources.Type.FOOD, Resources.instance.foodMax - Resources.instance.food);
+            ScoreTracker.instance.AddIncome(Resources.Type.FOOD, Resources.instance.foodMax - Resources.instance.food);
+            Resources.instance.food = Resources.instance.foodMax;
           }
 
           Resources.instance.person = Resources.instance.personLive;

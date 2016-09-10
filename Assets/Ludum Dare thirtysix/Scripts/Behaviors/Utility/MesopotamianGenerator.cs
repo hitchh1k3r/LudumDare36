@@ -26,12 +26,14 @@ public class MesopotamianGenerator : MonoBehaviour
     rareNames = rareNamesList.Split('\n');
   }
 
-  public void RemoveFromPool(int count)
+  public string[] RemoveFromPool(int count)
   {
+    string[] names = new string[count];
     for (int i = 0; i < count; ++i)
     {
-      ReleaseMesopotamian(GetMesopotamian());
+      names[i] = GetMesopotamian().mesopoNAMEian;
     }
+    return names;
   }
 
   public Mesopotamian GetMesopotamian()

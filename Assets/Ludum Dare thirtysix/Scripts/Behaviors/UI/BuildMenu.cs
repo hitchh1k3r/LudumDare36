@@ -6,7 +6,7 @@ public class BuildMenu : MonoBehaviour
 
   public Resources resourcePool;
   public GameObject costTip;
-  public GameObject[] menuItems;
+  public MenuEntry[] menuEntries;
   public Quaternion itemRotation = Quaternion.Euler(20, -132, 21);
 
   public static BuildMenu instance;
@@ -25,19 +25,19 @@ public class BuildMenu : MonoBehaviour
     {
       init = true;
       int i = 0;
-      foreach (GameObject go in menuItems)
+      foreach (MenuEntry go in menuEntries)
       {
         i = AddToMenu(i, go);
       }
     }
   }
 
-  private int AddToMenu(int i, GameObject go)
+  private int AddToMenu(int i, MenuEntry go)
   {
-    Transform menuItem = Instantiate(go).transform;
+    Transform menuItem = Instantiate(go.prefab).transform;
     menuItem.gameObject.GetComponent<BuildingPrice>().enabled = true;
     menuItem.parent = transform;
-    menuItem.localPosition = i * (1.57f + ((i % 2 == 1) ? 0.1f : 0)) * Vector3.down + ((i % 2 == 1) ? 1.5f : 0) * Vector3.right;
+    menuItem.localPosition = i * (1.57f + ((i % 2 == 1) ? 0.1f : 0)) * Vector3.down + ((i % 2 == 1) ? 1.5f : 0) * Vector3.right + go.yOffset * Vector3.up;
     menuItem.rotation = itemRotation;
     menuItem.localScale = Vector3.one;
     foreach (Transform trans in menuItem.gameObject.GetComponentsInChildren<Transform>(true))
@@ -55,7 +55,7 @@ public class BuildMenu : MonoBehaviour
     BuildingPrice price = menuItem.GetComponent<BuildingPrice>();
     if (price != null)
     {
-      price.prefab = go;
+      price.prefab = go.prefab;
       BuildingPrice.Cost[] costs = price.buildCosts;
       Transform costItem = null;
       if (costs.Length > 0)
@@ -91,6 +91,13 @@ public class BuildMenu : MonoBehaviour
     }
 
     return i + 1;
+  }
+
+  [System.Serializable]
+  public struct MenuEntry
+  {
+    public GameObject prefab;
+    public float yOffset;
   }
 
 }

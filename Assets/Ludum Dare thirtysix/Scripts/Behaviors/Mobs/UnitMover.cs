@@ -22,6 +22,7 @@ public class UnitMover : MonoBehaviour
   private Coroutine movement;
   private float timer;
   private bool disablePathing;
+  private bool delete;
 
   private float fall_volume = 1;
   private float attack_volume = 1;
@@ -40,6 +41,10 @@ public class UnitMover : MonoBehaviour
 
   void Update()
   {
+    if (delete)
+    {
+      Destroy(gameObject);
+    }
     if (!disablePathing && !ScoreTracker.instance.isSummaryShowing)
     {
       if (queuedMoves.Count == 0)
@@ -64,6 +69,7 @@ public class UnitMover : MonoBehaviour
     disablePathing = true;
     yield return movement;
     yield return ScaleTo(Vector3.zero, 0.25f);
+    delete = true;
     Destroy(gameObject);
   }
 
@@ -81,6 +87,7 @@ public class UnitMover : MonoBehaviour
     {
       StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
       yield return StartCoroutine(MoveTo(Vector3.forward));
+      delete = true;
       Destroy(gameObject);
       yield break;
     }
@@ -90,6 +97,7 @@ public class UnitMover : MonoBehaviour
       disablePathing = true;
       StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
       yield return StartCoroutine(MoveTo(1 * Vector3.forward));
+      delete = true;
       Destroy(gameObject);
       yield break;
     }
@@ -98,6 +106,7 @@ public class UnitMover : MonoBehaviour
       disablePathing = true;
       StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
       yield return StartCoroutine(MoveTo(1 * Vector3.forward));
+      delete = true;
       Destroy(gameObject);
       yield break;
     }
@@ -132,6 +141,7 @@ public class UnitMover : MonoBehaviour
         if ((price.type == "baby_tree" || price.type == "baby_crop" || price.type == "crop") && !tile.working)
         {
           audio.PlayOneShot(attackSound, attack_volume);
+          ScoreTracker.instance.LostTile((price.type == "baby_tree") ? "Sapling" : "Crop");
           Destroy(go);
           return true;
         }
@@ -142,11 +152,12 @@ public class UnitMover : MonoBehaviour
         {
           audio.PlayOneShot(attackSound, attack_volume);
           MesopotamianRandomizer[] people = go.GetComponentsInChildren<MesopotamianRandomizer>();
+          // This is a hack to work (we don't know how many workers are here, so we just count the worker graphics!)
           foreach (MesopotamianRandomizer person in people)
           {
             person.doNotReleaseName = true;
+            ScoreTracker.instance.LostVillager(1, new string[] { person.mesopoNAMEian });
           }
-          ScoreTracker.instance.AddLost(Resources.Type.PERSON, people.Length);
           Resources.instance.personLive -= people.Length;
           tile.working = false;
           foreach (SpecialStates child in go.GetComponentsInChildren<SpecialStates>(true))

@@ -10,8 +10,8 @@ public class HouseUpkeep : MonoBehaviour
     {
       if (Random.Range(0, 3) == 0)
       {
-        ++Resources.instance.personLive;
         ScoreTracker.instance.AddIncome(Resources.Type.PERSON, 1);
+        ++Resources.instance.personLive;
       }
     }
   }

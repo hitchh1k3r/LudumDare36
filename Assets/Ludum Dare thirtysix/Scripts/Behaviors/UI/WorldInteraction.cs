@@ -105,6 +105,13 @@ public class WorldInteraction : MonoBehaviour
           currentHover = null;
           world.GetTile(currentPoint.x, currentPoint.y).GetComponent<GameTile>().audio.PlayOneShot(buildSound);
           SoundEffects.PlaySound(buildSound);
+          foreach (BuildingPrice.Cost cost in BuildMenu.activeTool.buildCosts)
+          {
+            if (cost.type != Resources.Type.PERSON && cost.type != Resources.Type.TIME)
+            {
+              ScoreTracker.instance.AddExpenses(cost.type, cost.amount);
+            }
+          }
         }
       }
       else

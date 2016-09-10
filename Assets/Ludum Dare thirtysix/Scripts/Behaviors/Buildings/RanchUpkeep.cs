@@ -10,8 +10,8 @@ public class RanchUpkeep : MonoBehaviour
     {
       if (Random.Range(0, 10) == 0)
       {
-        ++Resources.instance.animal;
         ScoreTracker.instance.AddIncome(Resources.Type.ANIMAL, 1);
+        ++Resources.instance.animal;
       }
     }
   }

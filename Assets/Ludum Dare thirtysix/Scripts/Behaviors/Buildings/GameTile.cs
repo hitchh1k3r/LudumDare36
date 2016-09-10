@@ -25,7 +25,8 @@ public class GameTile : MonoBehaviour
   public int x, y;
   [System.NonSerialized]
   public AudioSource audio;
-  private bool isFirstTurn;
+  [System.NonSerialized]
+  public bool isFirstTurn;
 
   void OnEnable()
   {
@@ -142,12 +143,26 @@ public class GameTile : MonoBehaviour
           working = !working;
           if (!working)
           {
-            Resources.instance.AddResources(workCosts);
             audio.PlayOneShot(workerRemoveSounds[Random.Range(0, workerRemoveSounds.Length)]);
+            foreach (BuildingPrice.Cost cost in workCosts)
+            {
+              if (cost.type != Resources.Type.PERSON && cost.type != Resources.Type.TIME)
+              {
+                ScoreTracker.instance.RemoveExpenses(cost.type, cost.amount);
+              }
+            }
+            Resources.instance.AddResources(workCosts);
           }
           else
           {
             audio.PlayOneShot(workerPlaceSounds[Random.Range(0, workerPlaceSounds.Length)]);
+            foreach (BuildingPrice.Cost cost in workCosts)
+            {
+              if (cost.type != Resources.Type.PERSON && cost.type != Resources.Type.TIME)
+              {
+                ScoreTracker.instance.AddExpenses(cost.type, cost.amount);
+              }
+            }
           }
           foreach (SpecialStates child in GetComponentsInChildren<SpecialStates>(true))
           {
@@ -171,12 +186,26 @@ public class GameTile : MonoBehaviour
         {
           world.SetTile(x, y, null);
           Resources.instance.AddResources(demolishRefund);
+          foreach (BuildingPrice.Cost cost in demolishRefund)
+          {
+            if (cost.type != Resources.Type.PERSON && cost.type != Resources.Type.TIME)
+            {
+              ScoreTracker.instance.RemoveExpenses(cost.type, cost.amount);
+            }
+          }
           if (working)
           {
             BuildingPrice.Cost[] workCosts = GetComponent<BuildingPrice>().workCosts;
+            foreach (BuildingPrice.Cost cost in workCosts)
+            {
+              if (cost.type != Resources.Type.PERSON && cost.type != Resources.Type.TIME)
+              {
+                ScoreTracker.instance.RemoveExpenses(cost.type, cost.amount);
+              }
+            }
             Resources.instance.AddResources(workCosts);
 
-            if (firstTurnWork)
+            if (firstTurnWork && isFirstTurn)
             {
               ++Resources.instance.person;
             }
