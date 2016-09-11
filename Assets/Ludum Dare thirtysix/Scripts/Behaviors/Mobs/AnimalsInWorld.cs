@@ -7,8 +7,10 @@ public class AnimalsInWorld : MonoBehaviour
 
   public AnimalsInWorld supressAnimal;
 
+  [System.NonSerialized]
+  public bool showing;
+
   private static int showCount;
-  private bool showing;
   private bool canShow = true;
   private MeshRenderer mesh;
 
@@ -19,6 +21,7 @@ public class AnimalsInWorld : MonoBehaviour
     {
       supressAnimal.canShow = false;
       mesh.enabled = true;
+      showing = true;
     }
     else
     {
@@ -32,6 +35,23 @@ public class AnimalsInWorld : MonoBehaviour
     {
       supressAnimal.canShow = true;
       mesh.enabled = false;
+      showing = false;
+    }
+  }
+
+  public void KillAnimal()
+  {
+    if (supressAnimal != null)
+    {
+      gameObject.SetActive(false);
+    }
+    else
+    {
+      showing = false;
+      --showCount;
+      mesh.enabled = false;
+      Resources.instance.animal = Mathf.Max(Resources.instance.animal - 1, 0);
+      ScoreTracker.instance.AddLoss(Resources.Type.ANIMAL, 1);
     }
   }
 

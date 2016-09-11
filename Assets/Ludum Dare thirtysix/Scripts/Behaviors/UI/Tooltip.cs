@@ -27,6 +27,11 @@ public class Tooltip : MonoBehaviour
     ((RectTransform)transform).anchorMin = new Vector2(pos.x, pos.y);
     ((RectTransform)transform).anchorMax = new Vector2(pos.x, pos.y);
     ((RectTransform)transform).anchoredPosition = new Vector3(0, upward ? 150 : 0);
+
+    if (RoundManager.instance.stage == RoundManager.RoundStage.DAY || RoundManager.instance.stage == RoundManager.RoundStage.NIGHT || ScoreTracker.instance.isSummaryShowing)
+    {
+      gameObject.SetActive(false);
+    }
   }
 
 }

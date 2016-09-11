@@ -20,7 +20,8 @@ public class TileGrid : MonoBehaviour
   public int width, height;
 
   private Dictionary<char, GameObject[]> tileLookup = new Dictionary<char, GameObject[]>();
-  private GameObject[] terrain;
+  [System.NonSerialized]
+  public GameObject[] terrain;
   private GameObject[] tiles;
 
   void OnEnable()

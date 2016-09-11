@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MusicSync : MonoBehaviour
@@ -7,17 +7,24 @@ public class MusicSync : MonoBehaviour
   public AudioSource sourceTrack;
   public AudioSource[] matchTracks;
 
+  public int lastInterval = -1;
+
   void Update()
   {
     int time = sourceTrack.timeSamples;
-    foreach (AudioSource track in matchTracks)
+    int interval = time / 22050; // should be 0.5 seconds at 44KHz
+    if (lastInterval != interval)
     {
-      if (time < track.clip.samples)
+      lastInterval = interval;
+      foreach (AudioSource track in matchTracks)
       {
-        track.timeSamples = time;
-        if (!track.isPlaying)
+        if (time < track.clip.samples && Mathf.Abs(track.timeSamples - time) > 882) // 1/50th second
         {
-          track.Play();
+          track.timeSamples = time;
+          if (!track.isPlaying)
+          {
+            track.Play();
+          }
         }
       }
     }

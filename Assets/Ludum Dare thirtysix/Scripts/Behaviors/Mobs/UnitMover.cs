@@ -83,7 +83,7 @@ public class UnitMover : MonoBehaviour
     int xRight = Mathf.RoundToInt(right.x);
     int yRight = -Mathf.RoundToInt(right.z);
 
-    if (block.x < -1 || block.z > 1 || block.x > TileGrid.instance.width || block.z < -TileGrid.instance.height)
+    if (block.x < -0.75f || block.z > 0.75f || block.x > TileGrid.instance.width - 0.25f || block.z < -TileGrid.instance.height + 0.25f)
     {
       StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
       yield return StartCoroutine(MoveTo(Vector3.forward));
@@ -92,23 +92,36 @@ public class UnitMover : MonoBehaviour
       yield break;
     }
 
-    if (InteractWith(xLeft, yLeft))
+    for (int pass = 0; pass < 3; ++pass)
     {
-      disablePathing = true;
-      StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
-      yield return StartCoroutine(MoveTo(1 * Vector3.forward));
-      delete = true;
-      Destroy(gameObject);
-      yield break;
-    }
-    if (InteractWith(xRight, yRight))
-    {
-      disablePathing = true;
-      StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
-      yield return StartCoroutine(MoveTo(1 * Vector3.forward));
-      delete = true;
-      Destroy(gameObject);
-      yield break;
+      bool leftFirst = (Random.value > 0.5f);
+      if (leftFirst && InteractWith(xLeft, yLeft, pass))
+      {
+        disablePathing = true;
+        StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
+        yield return StartCoroutine(MoveTo(1 * Vector3.forward));
+        delete = true;
+        Destroy(gameObject);
+        yield break;
+      }
+      if (InteractWith(xRight, yRight, pass))
+      {
+        disablePathing = true;
+        StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
+        yield return StartCoroutine(MoveTo(1 * Vector3.forward));
+        delete = true;
+        Destroy(gameObject);
+        yield break;
+      }
+      if (!leftFirst && InteractWith(xLeft, yLeft, pass))
+      {
+        disablePathing = true;
+        StartCoroutine(ScaleTo(Vector3.zero, moveTime / 2));
+        yield return StartCoroutine(MoveTo(1 * Vector3.forward));
+        delete = true;
+        Destroy(gameObject);
+        yield break;
+      }
     }
 
     if (TileGrid.instance.GetPassable(xLeft, yLeft) || TileGrid.instance.GetPassable(xRight, yRight))
@@ -121,13 +134,20 @@ public class UnitMover : MonoBehaviour
     }
   }
 
-  private bool InteractWith(int x, int y)
+  IEnumerator Highlight(GameObject go, Color color, float time)
+  {
+    HighlightEffect.AddHighlight(go, color);
+    yield return new WaitForSeconds(time);
+    HighlightEffect.RemoveHighlight(go);
+  }
+
+  private bool InteractWith(int x, int y, int pass)
   {
     GameObject go = TileGrid.instance.GetTile(x, y);
     if (go != null)
     {
       BuildingPrice price = go.GetComponent<BuildingPrice>();
-      if (price.type == "pit")
+      if (price.type == "pit" && pass == 0)
       {
         audio.PlayOneShot(fallSound, fall_volume);
         TimeOfDayPopper.overrideMaterial = GetComponentInChildren<MeshRenderer>().sharedMaterial;
@@ -138,7 +158,7 @@ public class UnitMover : MonoBehaviour
       GameTile tile = go.GetComponent<GameTile>();
       if (moveType == MoveStyle.STALK)
       {
-        if ((price.type == "baby_tree" || price.type == "baby_crop" || price.type == "crop") && !tile.working)
+        if ((price.type == "baby_tree" || price.type == "baby_crop" || price.type == "crop") && !tile.working && pass == 1)
         {
           audio.PlayOneShot(attackSound, attack_volume);
           ScoreTracker.instance.LostTile((price.type == "baby_tree") ? "Sapling" : "Crop");
@@ -148,7 +168,23 @@ public class UnitMover : MonoBehaviour
       }
       else if (moveType == MoveStyle.WADDLE)
       {
-        if (tile.working && price.type != "fence")
+        if (price.type == "ranch" && pass == 1)
+        {
+          bool okay = false;
+          foreach (AnimalsInWorld aiw in go.GetComponentsInChildren<AnimalsInWorld>(true))
+          {
+            if (aiw.showing)
+            {
+              aiw.KillAnimal();
+              okay = true;
+            }
+          }
+          if (okay)
+          {
+            return true;
+          }
+        }
+        if (tile.working && price.type != "fence" && pass == 2)
         {
           audio.PlayOneShot(attackSound, attack_volume);
           MesopotamianRandomizer[] people = go.GetComponentsInChildren<MesopotamianRandomizer>();
